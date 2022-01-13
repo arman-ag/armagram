@@ -1,5 +1,6 @@
 import ChatInput from "../Components/ChatPage/ChatInput";
 import Header from "../Components/Header";
+import Menu from "../Components/Menu";
 import "./first.scss";
 function App() {
  
@@ -9,7 +10,8 @@ function App() {
     <>
     <Header/>
     <ChatInput/>
-
+<Menu/>
+<Header/>
       <div className="bg">
         this is a tests
         </div>

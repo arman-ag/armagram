@@ -1,16 +1,10 @@
 import React from 'react';
 import "./headerStyle.scss";
-import ProfilePicture from './ProfilePicture';
+import ProfileInfo from './ProfileInfo';
 const Header = () => {
     return (
-        <div className='header' >
-            <ProfilePicture/>
-            <div className='profile-info'>
-<h3>shakira</h3>
-<span>last seen recently</span>
-
-            </div>
-
+        <div  >
+            <ProfileInfo/>
         </div>
     )
 }

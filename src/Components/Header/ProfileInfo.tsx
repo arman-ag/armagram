@@ -1,12 +1,16 @@
 import React from "react";
 import shakira from "./../../images/shakira.jpg";
 import "./headerStyle.scss";
-const ProfilePicture = () => {
+const ProfileInfo = () => {
   return (
-    <div>
+    <div className="header">
       <img src={shakira} alt="profile image" className="profile" />
+      <div className="profile-info">
+        <h3>shakira</h3>
+        <span>last seen recently</span>
+      </div>
     </div>
   );
 };
 
-export default ProfilePicture;
+export default ProfileInfo;
