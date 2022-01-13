@@ -1,5 +1,6 @@
 @import "./../../sassStyles/variables";
 @import "./../../sassStyles/typography";
+@import "./../../sassStyles/global";
 .input-style{
         width:100%;
         height:51px;
@@ -12,19 +13,14 @@
            width: 60%;
            border:none;
            &:focus{outline:none};
-           &::placeholder{color:$light-gray;
+           &::placeholder {
+               color: $gray-2;
         font-size:$medium-font;
         };
         
     }
     button {
-background: none;
- color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
+@extend%btn
     }
 
 }

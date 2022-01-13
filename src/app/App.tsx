@@ -1,6 +1,6 @@
 import ChatInput from "../Components/ChatPage/ChatInput";
 import Header from "../Components/Header";
-import Menu from "../Components/Menu";
+import ProfileMenu from "../Components/ProfileMenu";
 import "./first.scss";
 function App() {
  
@@ -8,13 +8,12 @@ function App() {
 
   return (
     <>
+    
     <Header/>
     <ChatInput/>
-<Menu/>
-<Header/>
-      <div className="bg">
-        this is a tests
-        </div>
+{/* <Menu/> */}
+<ProfileMenu/>
+     
     </>
   );
 }
