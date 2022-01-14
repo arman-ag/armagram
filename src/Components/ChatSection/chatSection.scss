@@ -2,12 +2,12 @@
 @import "./../../sassStyles/typography";
 @import "./../../sassStyles/global";
 .input-style{
+    margin-bottom: 20px;
     background-color: $white-1;
         width:100%;
         height:51px;
         display: flex;
         justify-content: space-around;
-        border:2px solid black;
         border-radius: 12px;
         align-items: center;
         input{
@@ -28,12 +28,45 @@
 .message{
     background-color: $white-1;
     padding: 10px;
-    border-radius: 20%;
-    background-color: $white-1;
+    border-radius: 8px ;
+    position: relative;
+    // display: inline-block;
+    width: max-content;
+    margin-top: 10px;
+    &-send{
+        align-self: flex-end;
 
+        background-color: $green-1;
+        .angle{
+        position: absolute;
+        top: 15%;
+        right:-8px;
+border-style: solid;
+border-width: 10px 0 10px 15px;
+border-color: transparent transparent transparent $green-1;
+        }
+    }
+    &-receive{
+        background-color: $white-1;
+ .angle {
+     position: absolute;
+     bottom: 15%;
+     left: -8px;
+    border-style: solid;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent $white-1 transparent transparent;
+
+ }
+    }
 }
 .chat-section{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+   align-items: center;
+   &-message{
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+   }
 }

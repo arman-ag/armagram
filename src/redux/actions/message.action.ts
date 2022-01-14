@@ -1,7 +1,8 @@
-import { dataMessage } from "./../../assets"
+import { dataMessage } from "./../../assets";
+import { message } from "./types";
 const getMessage=(phoneNum:string)=>{
-    const{[phoneNum]:data}:any=dataMessage
-    console.log(data)
+    const{[phoneNum]:data}:message=dataMessage
+console.log(data)
     return{type:phoneNum,data}
 }
 
