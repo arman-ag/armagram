@@ -2,7 +2,8 @@
 .menu{
    max-width: 410px;
     height:100vh;
-border-right: 1px solid $light-gray;
+border-right: 1px solid $gray-2;
+background-color: $white-1;
 }
 .menu-item{
     display: flex;

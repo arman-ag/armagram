@@ -2,6 +2,7 @@
 @import "./../../sassStyles/typography";
 @import "./../../sassStyles/global";
 .input-style{
+    background-color: $white-1;
         width:100%;
         height:51px;
         display: flex;
@@ -23,4 +24,16 @@
 @extend%btn
     }
 
+}
+.message{
+    background-color: $white-1;
+    padding: 10px;
+    border-radius: 20%;
+    background-color: $white-1;
+
+}
+.chat-section{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }

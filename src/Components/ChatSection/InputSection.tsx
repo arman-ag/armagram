@@ -1,8 +1,8 @@
 import React from 'react'
 import { AiOutlinePaperClip } from 'react-icons/ai'
 import { BsEmojiSmile } from 'react-icons/bs'
-import "./chatInput.scss"
-const ChatInput = () => {
+import "./chatSection.scss"
+const InputSection = () => {
     return (
         <div className='input-style'>
             <button>
@@ -16,4 +16,4 @@ const ChatInput = () => {
     )
 }
 
-export default ChatInput
+export default InputSection

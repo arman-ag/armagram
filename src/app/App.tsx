@@ -1,20 +1,18 @@
-import ChatInput from "../Components/ChatPage/ChatInput";
+import ChatSection from "../Components/ChatSection";
 import Header from "../Components/Header";
-import ProfileMenu from "../Components/ProfileMenu";
-import "./first.scss";
+import Menu from "../Components/Menu";
+import "./app.scss";
 function App() {
  
   // const dispatch = useDispatch();
 
   return (
-    <>
+    <div className="container">
     
-    <Header/>
-    <ChatInput/>
-{/* <Menu/> */}
-<ProfileMenu/>
-     
-    </>
+    <Header />
+<Menu/>
+<ChatSection/>
+    </div>
   );
 }
 

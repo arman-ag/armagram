@@ -1,15 +1,18 @@
 @import "../../sassStyles/variables";
+.header{
+    background-color: $white-1;
+}
 .profile{
     width:41px;
     height: 41px;
     border-radius: 100%;
     margin: 0 15px
 }
-.header{
+.header-profile {
     display: flex;
     align-items: center;
     height: 56px;
-    .profile-info{
+    .info{
         display: flex;
         align-items: flex-start;
         flex-direction: column;
