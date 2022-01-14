@@ -6,3 +6,6 @@ export interface messagesType{
 export interface messageText{
     text:string
 }
+export interface allMessageType extends messagesType{
+    allMessages:{ }[]
+}

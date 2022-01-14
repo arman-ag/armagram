@@ -36,7 +36,7 @@ return <MessageReply text={item.message} key={index}/>
         {messages.map((item,index)=>choseType(item,index)
         )}
         </div>
-      <InputSection/>    
+      <InputSection allMessages={messages}/>    
         </div>
     )
 }
