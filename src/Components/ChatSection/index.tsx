@@ -10,7 +10,6 @@ import { messagesType } from './types';
 const ChatSection = () => {
   const dispatch = useDispatch();
    const messages:messagesType[] = useSelector((state:any) => state.message.message)
-   console.log("messages",messages)
   
    useEffect(() => {
    const num:string="+2132789512"

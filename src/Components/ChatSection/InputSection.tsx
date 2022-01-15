@@ -20,7 +20,6 @@ const [text, setText] = useState("")
 setText("")
 
     }
-    console.log("sascascasc",text)
     return (
         <div className='send-box'>
         <div className='input-style'>

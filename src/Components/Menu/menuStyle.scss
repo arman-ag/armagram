@@ -6,6 +6,7 @@ border-right: 1px solid $gray-2;
 background-color: $white-1;
 }
 .menu-item{
+    cursor: pointer;
     display: flex;
     height:72px;
     align-items: center;
