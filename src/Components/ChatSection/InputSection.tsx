@@ -5,8 +5,9 @@ import { IoMdSend } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { messageAction } from '../../redux/actions';
 import "./chatSection.scss";
+import { allMessageType } from './types';
 
-const InputSection = ({allMessages}:any) => {
+const InputSection = ({allMessages}:allMessageType) => {
   const dispatch = useDispatch();
 const [text, setText] = useState("")
     const textEntry=(e:React.ChangeEvent<HTMLInputElement>)=>{

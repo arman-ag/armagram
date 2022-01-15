@@ -4,14 +4,14 @@ import { modalAction } from "../../redux/actions";
 import shakira from "./../../images/shakira.jpg";
 import "./headerStyle.scss";
 const ProfileInfo = () => {
-  const profile:any = useSelector((state:any) => state.profile.profile)
+   const profile = useSelector((state:any) => state.singleProfile.profile)
 console.log({profile})
 const dispatch=useDispatch()
   return (
     <div className="header-profile"onClick={() => dispatch(modalAction.open("profileMenu"))}>
       <img src={shakira} alt="profile image" className="profile" />
       <div className="info">
-        <h3>shakira</h3>
+        <h3>{profile.name}</h3>
         <span>last seen recently</span>
       </div>
     </div>

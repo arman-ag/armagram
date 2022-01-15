@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { messageAction } from '../../redux/actions';
+import { messageAction, singleProfileAction } from '../../redux/actions';
 import "./menuStyle.scss";
 
 const MenuItem = ({profileData}:any) => {
   // const [message, setMessage] = useState([])
    const dispatch = useDispatch();
    const messages = useSelector((state:any) => state.message.message)
+   const state = useSelector((state:any) => state)
    
    const phone:string=profileData.phone
    console.log("messages",messages)
+   console.log("state",state)
    useEffect(() => {
      dispatch(messageAction.getMessage(phone,false));
     }, [dispatch]);
@@ -20,7 +22,7 @@ const MenuItem = ({profileData}:any) => {
   // console.log("lastMessage",message)
   const receiveMessage=()=>{
      dispatch(messageAction.getMessage(phone,true));
-    // dispatch(profileAction.getSingleProfile(phone))
+    dispatch(singleProfileAction.getSingleProfile(phone))
 
 
   }

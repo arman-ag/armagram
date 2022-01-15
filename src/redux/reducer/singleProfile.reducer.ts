@@ -1,16 +1,16 @@
 const initialState={
-    profile:[]
+    profile:{}
 }
-const profile=(state=initialState,action:any)=>{
+const singleProfile=(state=initialState,action:any)=>{
     switch(action.type){
-        case "ALL_PROFILE":
+     
+            case "SINGLE_PROFILE":
             return{
                 ...state,
                 profile:action.data
-            };
-           
+            }
             default:
                 return state
     }
 }
-export default profile
+export default singleProfile

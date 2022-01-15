@@ -15,7 +15,7 @@ const Menu = () => {
   return (
     <div className="menu">
       <button onClick={() => dispatch(modalAction.open("contact"))} > contact</button>
-   { profile.map((item:any,index:number)=><MenuItem profileData={item}  key={index}/>)
+   { profile.map((item:any,index:number)=><MenuItem profileData={item}  key={item.id}/>)
 
    }
     

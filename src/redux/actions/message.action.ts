@@ -10,6 +10,10 @@ const sendMessage=(phoneNum:string,message:any)=>{
         
  return{type:phoneNum,data:message}
 }
+
+
+
+
 export const messageAction={
     getMessage,
     sendMessage
