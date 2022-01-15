@@ -4,6 +4,7 @@ import ProfileContact from './ProfileContact'
 import ProfileHeader from './ProfileHeader'
 import "./profileMenuStyle.scss"
 const ProfileMenu = () => {
+    
     return (
         <div className='ProfileMenu'>
             <ProfileHeader/>
@@ -15,6 +16,7 @@ const ProfileMenu = () => {
 </div>
 </div>
 <ProfileContact/>
+        
         </div>
     )
 }

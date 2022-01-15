@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { messageAction } from '../../redux/actions';
+import { messageAction, profileAction } from '../../redux/actions';
 import "./menuStyle.scss";
 
 const MenuItem = ({profileData}:any) => {
@@ -19,6 +19,8 @@ const MenuItem = ({profileData}:any) => {
   // console.log("lastMessage",message)
   const receiveMessage=(phone:string)=>{
      dispatch(messageAction.getMessage(phone));
+    dispatch(profileAction.getSingleProfile(phone))
+
 
   }
     return (

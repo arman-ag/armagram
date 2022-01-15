@@ -3,12 +3,20 @@
 @import "./../../sassStyles/typography";
 
 .ProfileMenu{
- max-width: 410px;
- height:100%;
- border-right: 1px solid $gray-2;
+ max-width: 450px;
+
+     overflow: auto;
+      height: 600px;
+
  
 }
 .profile-header{
+    width:100%;
+    background-color: white;
+    position:sticky ;
+    top:0;
+ z-index: 5;
+ border-bottom: 1px black solid;
     align-items: center;
     height: 56px;
     display: flex;
@@ -33,6 +41,7 @@ margin: 0 15px
 display: flex;
 flex-direction: column;
 margin-left: 30px;
+align-items: flex-start;
     }
     &-text{
         font-size: $large-font;
@@ -55,6 +64,7 @@ position: relative;
     color: $white-1;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     &-name{
         font-size: $large-font;
         font-weight: bold;

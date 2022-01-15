@@ -9,7 +9,6 @@ const profile=(state=initialState,action:any)=>{
                 profile:action.data
             };
             case "SINGLE_PROFILE":
-                 console.log(action,"action")
             return{
                 ...state,
                 profile:action.data
