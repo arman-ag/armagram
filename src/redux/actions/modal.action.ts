@@ -1,8 +1,8 @@
-const open=()=>{
-    return{type:"OPEN",openStatus:true}
+const open=(element:string)=>{
+    return{type:"OPEN",status:{open:true,element}}
 }
 const close=()=>{
-    return {type:"CLOSE",openStatus:false}
+    return {type:"CLOSE",status:{open:false}}
 }
 export const modalAction={
     close,

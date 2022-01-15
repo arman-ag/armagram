@@ -8,7 +8,7 @@ const ProfileInfo = () => {
 console.log({profile})
 const dispatch=useDispatch()
   return (
-    <div className="header-profile"onClick={() => dispatch(modalAction.open())}>
+    <div className="header-profile"onClick={() => dispatch(modalAction.open("profileMenu"))}>
       <img src={shakira} alt="profile image" className="profile" />
       <div className="info">
         <h3>shakira</h3>

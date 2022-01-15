@@ -1,21 +1,24 @@
 import { useSelector } from "react-redux";
 import ChatSection from "../Components/ChatSection";
+import Contacts from "../Components/Contacts";
 import Header from "../Components/Header";
 import Menu from "../Components/Menu";
 import Modal from "../Components/Modal";
 import ProfileMenu from "../Components/ProfileMenu";
 import "./app.scss";
 function App() {
-  const isOpen = useSelector((state:any) => state.modal.openStatus)
+  const status = useSelector((state:any) => state.modal.status)
   
-
+console.log("status",status)
   return (
     <div className="container">
     <Header />
 <Menu/>
 <ChatSection/>
- 
-      {isOpen && <Modal  ><ProfileMenu/></Modal>} 
+      {status.open&&(status?.element==="profileMenu" ? <Modal  ><ProfileMenu/></Modal>:
+      <Modal>
+      <Contacts/>  
+        </Modal>)} 
 </div>
   );
 }

@@ -1,17 +1,17 @@
 const initialState={
-    openStatus:false
+    status:{open:false,element:""}
 }
 const isOpen = (state = initialState,action:any)=>{
     switch(action.type){
         case "OPEN":
             return{
                 ...state,
-                openStatus:action.openStatus
+                status:action.status
             }
             case "CLOSE":
                 return{
 ...state,
-openStatus:action.openStatus
+status:action.status
                 }
                 default:
                     return state

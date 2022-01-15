@@ -2,13 +2,14 @@
 @import "./../../sassStyles/global";
 @import "./../../sassStyles/typography";
 
-.ProfileMenu{
- max-width: 450px;
- border-radius: 5px;
+.contact-menu{
+ width: 350px;
      overflow: auto;
-      height: 600px;
+      height: 500px;
+
+ border-radius: 5px;
 }
-.profile-header{
+.contact-header{
     width:100%;
     background-color: white;
     position:sticky ;
@@ -18,17 +19,61 @@
     align-items: center;
     height: 56px;
     display: flex;
-    justify-content: space-between;
-    &-close{display:flex}
     button{
 @extend%btn;
-margin: 0 15px
     }
     &-title{
         font-size:$large-font;
         font-weight:500 ;
+        text-align: center;
+ flex-grow: 2
     }
 }
+
+
+
+
+.single-contact {
+    cursor: pointer;
+    display: flex;
+    height: 72px;
+    align-items: center;
+
+    .profile {
+        width: 55px;
+        height: 54px;
+        border-radius: 100%;
+        margin: 0 15px
+    }
+
+    .profile-info {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+
+        h3 {
+            margin: 0
+        }
+
+        ;
+    }
+
+    .single-contact-phone {
+        display: flex;
+
+
+        &-text {
+            color: $gray-3
+        }
+
+        
+    }
+}
+
+
+
+
 .ProfileContact{
     &-main{
         display: flex;
