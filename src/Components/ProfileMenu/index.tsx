@@ -9,12 +9,29 @@ const ProfileMenu = () => {
     // const logo =
     console.log(typeof profile?.profileImage)
 
+
+ const image=()=>{
+    switch (profile?.name) {
+      case "Shakira":
+       
+      return( <img src={require('assets/images/shakira.jpg')} alt="profile "  />);
+        
+
+         case "Joe Biden":
+       return(<img src={require('assets/images/biden.jpg')} alt="profile "  />)
+    
+      default:
+        
+        break;
+    }
+  }
+const ali="assets/images/shakira.jpg"
     return (
         <div className='ProfileMenu'>
             <ProfileHeader/>
             <div className='profileImage'>
 {/* <img src={require(profile?.profileImage)}  alt="profile header" /> */}
-<img src={require("assets/images/shakira.jpg")}  alt="profile header" />
+{image()}
 <div className='profileImage-caption'>
 <span className='profileImage-caption-name'>{profile.name}</span>
 <span>last seen recently</span>

@@ -10,27 +10,37 @@ const MenuItem = ({profileData}:any) => {
    const state = useSelector((state:any) => state)
    
    const phone:string=profileData.phone
-   console.log("messages",messages)
-   console.log("state",state)
+  //  console.log("messages",messages)
+  //  console.log("state",state)
    useEffect(() => {
      dispatch(messageAction.getMessage(phone,false));
-    }, [dispatch]);
+    }, [dispatch,phone]);
     
-  //   useEffect(() => {
-  //  setMessage(messages[messages.length - 1])
-  // }, [messages])
-  // console.log("lastMessage",message)
+  
   const receiveMessage=()=>{
      dispatch(messageAction.getMessage(phone,true));
     dispatch(singleProfileAction.getSingleProfile(phone))
+  }
+  const image=()=>{
+    switch (profileData?.name) {
+      case "Shakira":
+       
+      return( <img src={require('assets/images/shakira.jpg')} alt="profile " className="profile" />);
+        
 
-
+         case "Joe Biden":
+       return(<img src={require('assets/images/biden.jpg')} alt="profile " className="profile" />)
+    
+      default:
+        
+        break;
+    }
   }
     return (
         <div className='menu-item' 
         onClick={receiveMessage}
         >
-              <img src={require('./../../assets/images/shakira.jpg')} alt="profile image" className="profile" />
+          {image()}
       <div className="profile-info">
         <h3>{profileData?.name}</h3>
         <div className='last-message'>
