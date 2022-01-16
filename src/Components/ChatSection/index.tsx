@@ -25,9 +25,9 @@ return <MessageReply text={item} key={index}/>
 }
 }
     return (
-        <div className="chat-section"> 
+        <div style={mounted?({display:"flex"}):({display:"none"})} className="chat-section"> 
         <div className='chat-section-message'>
-        {mounted&&(messages.map((item,index)=>choseType(item,index)
+        {(messages.map((item,index)=>choseType(item,index)
         ))}
         </div>
       <InputSection allMessages={messages}/>    

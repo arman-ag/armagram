@@ -4,6 +4,8 @@ import { modalAction } from "../../redux/actions";
 import "./headerStyle.scss";
 const ProfileInfo = () => {
    const profile = useSelector((state:any) => state.singleProfile.profile)
+   const mounted = useSelector((state:any) => state.message.mounted)
+
    const image=()=>{
     switch (profile?.name) {
       case "Shakira":
@@ -14,14 +16,12 @@ const ProfileInfo = () => {
          case "Joe Biden":
        return(<img src={require('assets/images/biden.jpg')} alt="profile "  className="profile" />)
     
-      default:
-        
-        break;
+     
     }
   }
 const dispatch=useDispatch()
   return (
-    <div className="header-profile"onClick={() => dispatch(modalAction.open("profileMenu"))}>
+    <div  className="header-profile"onClick={() => dispatch(modalAction.open("profileMenu"))}>
      {image()}
       <div className="info">
         <h3>{profile.name}</h3>
