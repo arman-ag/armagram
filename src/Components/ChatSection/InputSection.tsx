@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlinePaperClip } from 'react-icons/ai';
-import { BsEmojiSmile } from 'react-icons/bs';
+import { BsEmojiSmile, BsReply } from 'react-icons/bs';
 import { IoMdSend } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { messageAction } from '../../redux/actions';
@@ -23,6 +23,16 @@ setText("")
     }
     return (
         <div className='send-box'>
+            <div className="send-box-input">
+            <div className="repl-box">
+                <BsReply color="#3390EC" size={30} />
+                <div className='reply-box-horizontal'/>
+                <span>
+                cscasc
+                </span>
+            </div>
+
+
         <div className='input-style'>
             <button>
        <BsEmojiSmile color='#A8ABAD' size="25px" /> 
@@ -31,6 +41,7 @@ setText("")
         <button>  
        <AiOutlinePaperClip color='#A8ABAD' size="25px"/>
        </button>
+        </div>
         </div>
         <div className='send-box-button' >
         <button type="submit" onClick={send}>

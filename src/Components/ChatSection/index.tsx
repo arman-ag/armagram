@@ -20,7 +20,7 @@ return <MessageSend text={item.message} key={index}/>
 
 }
 else{
-return <MessageReply text={item.message} key={index}/>
+return <MessageReply text={item} key={index}/>
 
 }
 }

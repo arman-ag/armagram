@@ -12,3 +12,10 @@ export interface allMessageType {
     replyMessage?:string
 } []
 }
+export interface replyType{
+    text:{
+    replyMessage:string,
+        message:string
+    },
+
+}

@@ -71,8 +71,28 @@ border-color: transparent transparent transparent $green-1;
 }
 .send-box{
     margin-bottom: 20px;
-
     display: flex;
+    &-input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: $white-1;
+        border-radius: 12px;
+.reply-box{
+    display: flex;
+    justify-content: space-between;
+    &-horizontal{
+         margin-right:10px;
+         height:32px;
+         width:2px;
+         background-color: $blue-1;
+    }
+
+}
+        
+
+    };
     &-button{
         display: flex;
         align-items: center;
@@ -85,4 +105,25 @@ height:55px;
        @extend%btn;
    }}
    align-items: center;
+}
+.message-reply{
+    display: flex;
+    font-size: $smallest-font;
+    &-horizontal{
+        margin-right:10px;
+      height:32px;
+      width:2px;
+background-color: $green-2;
+display: inline-block;
+    }
+    &-box{
+display: flex;
+flex-direction: column;
+
+&-phone{
+font-weight:bold;
+font-size: $small-font;
+color:$green-2
+}
+    }
 }

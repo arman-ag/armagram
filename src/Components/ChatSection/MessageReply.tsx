@@ -1,12 +1,25 @@
 import React from 'react'
-import { messageText } from './types'
-
-const MessageReply = ({text}:messageText) => {
+import "./chatSection.scss"
+const MessageReply = ({text}:any) => {
     return (
         
-            <div className='message '>
-         {text} re
-        </div> 
+           <div className='message message-send  '>
+               <div className='message-reply'>
+                   
+                   <span className='message-reply-horizontal'/>
+               <div className='message-reply-box'>
+                <span className='message-reply-box-phone'>
+                +58235358
+                </span>
+                <span >
+                   {text.replyMessage}
+  </span>
+                   </div>
+               </div>
+       {text.message}
+            <div className='angle'/>
+
+        </div>
     )
 }
 
