@@ -24,6 +24,7 @@ setText("")
     return (
         <div className='send-box'>
             <div className="send-box-input">
+                
             <div className="repl-box">
                 <BsReply color="#3390EC" size={30} />
                 <div className='reply-box-horizontal'/>
