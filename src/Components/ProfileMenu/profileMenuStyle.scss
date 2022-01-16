@@ -9,12 +9,13 @@
       height: 600px;
 }
 .profile-header{
+   box-shadow: 5px 5px 15px 5px rgba(114, 114, 114, 0.78);
+    border-radius: 1px;
     width:100%;
     background-color: white;
     position:sticky ;
     top:0;
  z-index: 5;
- border-bottom: 1px black solid;
     align-items: center;
     height: 56px;
     display: flex;

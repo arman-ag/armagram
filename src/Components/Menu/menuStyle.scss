@@ -1,9 +1,16 @@
 @import "./../../sassStyles/variables";
+@import"./../../sassStyles/typography";
+@import"./../../sassStyles/global";
 .menu{
    max-width: 410px;
     // height:100vh;
 border-right: 1px solid $gray-2;
 background-color: $white-1;
+&-header{
+    border-bottom: 1px solid $gray-3;
+    height:100px;
+
+}
 }
 .menu-item{
     cursor: pointer;
@@ -44,4 +51,48 @@ background-color: $white-1;
      
  }
 }
+}
+.search-box {
+    background-color: $white-1;
+    width: 60%;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 22px;
+    align-items: center;
+border:1px solid $gray-3;
+    input {
+        width: 60%;
+        border: none;
+
+        &:focus {
+            outline: none
+        }
+
+        ;
+
+        &::placeholder {
+            color: $gray-2;
+            font-size: $medium-font;
+        }
+
+        ;
+
+    }
+
+    button {
+        @extend%btn
+    }
+
+}
+.menu-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   .contact-list {
+       @extend%btn;
+    border-radius: 20px !important;
+    height: 45px;
+border:$gray-3 1px solid
+   }
 }

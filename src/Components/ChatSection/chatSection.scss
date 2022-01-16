@@ -9,6 +9,7 @@
         justify-content: space-around;
         border-radius: 12px;
         align-items: center;
+       
         input{
            width: 60%;
            border:none;
@@ -127,16 +128,21 @@ border-color: transparent transparent transparent $green-1;
 
     };
     &-button{
+    box-shadow: 5px 5px 36px -11px rgba(114, 114, 114, 0.78);
         align-self: flex-end;
         display: flex;
         align-items: center;
         margin-left: 10px;
         background-color: $white-1;
-        border-radius: 100%;
-        width:64px;
-        height:55px;
+        border-radius: 50px;
+        width:45px;
+        height:50px;
         button {
        @extend%btn;
+        // pointer-events: none;
+       &:hover{
+           background-color: rgba(255, 255, 255, 0);
+       }
         }
             }
    align-items: center;
