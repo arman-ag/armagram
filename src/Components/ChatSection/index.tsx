@@ -9,7 +9,7 @@ import { messagesType } from './types';
 const ChatSection = () => {
    const messages:messagesType[] = useSelector((state:any) => state.message.message)
    const mounted:boolean = useSelector((state:any) => state.message.mounted)
-  
+console.log("message",messages)
 
 const choseType=(item:messagesType,index:number)=>{
 if(item.type==="receive"){

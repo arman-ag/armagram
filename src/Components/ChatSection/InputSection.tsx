@@ -13,20 +13,24 @@ const InputSection = ({allMessages}:allMessageType) => {
 
     const dispatch = useDispatch();
     const display:string = useSelector((state:any) => state.replyStatus.display)
-    console.log("open",display)
+    const phone:string = useSelector((state:any) => state.singleProfile.profile.phone)
+    
 
     const textEntry=(e:React.ChangeEvent<HTMLInputElement>)=>{
         setText(e.target.value)
     }
 
     const send=(e:React.MouseEvent)=>{
+        
             e.preventDefault();
+            if(text.length>0){
             const newMessage=[...allMessages,{type:"send",message:text}]
-        const num:string="+2132789512"
-        dispatch(messageAction.sendMessage(num,newMessage));
-setText("")
+            setTimeout(() => {
+  dispatch(messageAction.sendMessage(phone,newMessage,true))
+}, 2000)
+       ;
+setText("")}
     }
-
     return (
         <div className='send-box'>
          <div className="send-box-input">

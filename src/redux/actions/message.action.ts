@@ -6,9 +6,9 @@ const getMessage=(phoneNum:string,mounted:boolean)=>{
     return{type:phoneNum,data,mounted}
 }
 
-const sendMessage=(phoneNum:string,message:any)=>{
+const sendMessage=(phoneNum:string,message:any,mounted:boolean)=>{
         
- return{type:phoneNum,data:message}
+ return{type:phoneNum,data:message,mounted}
 }
 
 
