@@ -15,7 +15,7 @@ console.log("status",status)
     <Header />
 <Menu/>
 <ChatSection/>
-      {status.open&&(status?.element==="profileMenu" ? <Modal  ><ProfileMenu/></Modal>:
+      {status?.open&&(status?.element==="profileMenu" ? <Modal  ><ProfileMenu/></Modal>:
       <Modal>
       <Contacts/>  
         </Modal>)} 
