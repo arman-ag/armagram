@@ -3,6 +3,7 @@ import { message } from "./types";
 
 const getMessage=(phoneNum:string,mounted:boolean)=>{
     const{[phoneNum]:data}:message=dataMessage
+    
     return{type:phoneNum,data,mounted}
 }
 

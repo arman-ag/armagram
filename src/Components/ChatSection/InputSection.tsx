@@ -26,10 +26,10 @@ const InputSection = ({allMessages}:allMessageType) => {
             if(text.length>0){
             const newMessage=[...allMessages,{type:"send",message:text}]
             setTimeout(() => {
-  dispatch(messageAction.sendMessage(phone,newMessage,true))
+  dispatch(messageAction.sendMessage(phone,newMessage,true)) 
 }, 2000)
-       ;
 setText("")
+
 
 if(display==="flex"){
   const newMessage=[...allMessages,{type:"reply",message:text,replyMessage:replyText}]

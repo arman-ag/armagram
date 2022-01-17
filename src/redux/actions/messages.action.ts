@@ -2,7 +2,8 @@
 
 const sendMessage=(phoneNum:string,message:any)=>{
  
-    return{type:phoneNum,message}
+    console.log({type:phoneNum,message})
+    return{phoneNum,message}
 }
 
 
@@ -10,7 +11,7 @@ const sendMessage=(phoneNum:string,message:any)=>{
 
 
 
-export const senMessageAction={
+export const sendMessageAction={
     sendMessage,
     
 }
