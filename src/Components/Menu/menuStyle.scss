@@ -2,6 +2,7 @@
 @import"./../../sassStyles/typography";
 @import"./../../sassStyles/global";
 .menu{
+    left:0;
    max-width: 410px;
     // height:100vh;
 border-right: 1px solid $gray-2;
@@ -37,10 +38,16 @@ background-color: $white-1;
  }
 .last-message{
     display: flex;
+     
     
 
  &-text {
-     color: $gray-3
+     color: $gray-3;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     width:100px;
+     display:inline-block;
+     white-space: nowrap;
  }
  &-count{
      border-radius: 100%;
@@ -86,6 +93,7 @@ border:1px solid $gray-3;
 
 }
 .menu-header{
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -96,3 +104,12 @@ border:1px solid $gray-3;
 border:$gray-3 1px solid
    }
 }
+
+@media (max-width: 1000px) {
+    .menu-header {flex-direction: column;
+    align-items: center;
+justify-content: center;
+}
+.contact-list {
+    margin:5px 0;
+}}

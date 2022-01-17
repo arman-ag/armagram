@@ -11,6 +11,7 @@
 }
 .container{
     height: 100%;
+    overflow: auto;
   background-color: #c2eaba;
   background-image: linear-gradient(319deg, #c2eaba 0%, #c5f4e0 37%, #efc2cf 100%);
 display: grid;
@@ -21,3 +22,4 @@ grid-template:
 2fr 1fr 3fr 1fr;
 
 }
+ 
