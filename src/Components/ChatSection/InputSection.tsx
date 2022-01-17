@@ -14,7 +14,7 @@ const InputSection = ({allMessages}:allMessageType) => {
     const dispatch = useDispatch();
     const display:string = useSelector((state:any) => state.replyStatus.display)
     const phone:string = useSelector((state:any) => state.singleProfile.profile.phone)
-    
+    const replyText:string = useSelector((state:any) => state.replyStatus.replyText)
 
     const textEntry=(e:React.ChangeEvent<HTMLInputElement>)=>{
         setText(e.target.value)
@@ -29,7 +29,20 @@ const InputSection = ({allMessages}:allMessageType) => {
   dispatch(messageAction.sendMessage(phone,newMessage,true))
 }, 2000)
        ;
-setText("")}
+setText("")
+
+if(display==="flex"){
+  const newMessage=[...allMessages,{type:"reply",message:text,replyMessage:replyText}]
+dispatch(replyAction.close())
+            setTimeout(() => {
+  dispatch(messageAction.sendMessage(phone,newMessage,true))
+}, 2000)
+
+}
+
+}
+
+
     }
     return (
         <div className='send-box'>
@@ -43,13 +56,13 @@ setText("")}
                 </div>
 
                
-                    <div className='reply-box-text-number'> +5832547554</div>
+                    <div className='reply-box-text-number'> {phone}</div>
                     <div className='container-text'>
                      <button className='container-text-button' onClick={() => dispatch(replyAction.close())}>
                     <RiCloseLine style={{ marginBottom: "-3px" }}  size="25" color=" #2c3e50"/>
           </button>
                 <div className='reply-box-text-message'>
-                cscasccsacascs
+                {replyText}
                 </div>
                 </div>
             </div>

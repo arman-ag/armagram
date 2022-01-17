@@ -4,7 +4,6 @@ import { modalAction } from "../../redux/actions";
 import "./headerStyle.scss";
 const ProfileInfo = () => {
    const profile = useSelector((state:any) => state.singleProfile.profile)
-   const mounted = useSelector((state:any) => state.message.mounted)
 
    const image=()=>{
     switch (profile?.name) {

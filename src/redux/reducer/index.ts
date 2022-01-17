@@ -6,6 +6,6 @@ import replyStatus from "./replyStatus.reducer";
 import singleProfile from "./singleProfile.reducer";
 
 const allReducer = combineReducers({
-  message,profile,modal,singleProfile,replyStatus
+  message,profile,modal,singleProfile,replyStatus,
 });
 export default allReducer;

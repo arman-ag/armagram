@@ -6,7 +6,8 @@ const replyStatus = (state = initialState,action:any)=>{
         case "OPEN":
             return{
                 ...state,
-                display:action.open
+                display:action.open,
+                replyText:action.text
             }
             case "CLOSE":
 

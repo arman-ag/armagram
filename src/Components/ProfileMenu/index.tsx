@@ -6,10 +6,7 @@ import "./profileMenuStyle.scss"
 import { profileTypes } from './profileMenuTypes'
 const ProfileMenu = () => {
     const profile:profileTypes= useSelector((state:any) => state.singleProfile.profile)
-    // const logo =
-    console.log(typeof profile?.profileImage)
-
-
+    
  const image=()=>{
     switch (profile?.name) {
       case "Shakira":
@@ -25,7 +22,6 @@ const ProfileMenu = () => {
         break;
     }
   }
-const ali="assets/images/shakira.jpg"
     return (
         <div className='ProfileMenu'>
             <ProfileHeader/>

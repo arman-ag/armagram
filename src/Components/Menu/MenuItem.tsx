@@ -4,14 +4,13 @@ import { messageAction, singleProfileAction } from '../../redux/actions';
 import "./menuStyle.scss";
 
 const MenuItem = ({profileData}:any) => {
-  // const [message, setMessage] = useState([])
    const dispatch = useDispatch();
    const messages = useSelector((state:any) => state.message.message)
    const state = useSelector((state:any) => state)
    
    const phone:string=profileData.phone
-  //  console.log("messages",messages)
-  //  console.log("state",state)
+   console.log("stacsate",state)
+
    useEffect(() => {
      dispatch(messageAction.getMessage(phone,false));
     }, [dispatch,phone]);
@@ -31,9 +30,7 @@ const MenuItem = ({profileData}:any) => {
          case "Joe Biden":
        return(<img src={require('assets/images/biden.jpg')} alt="profile " className="profile" />)
     
-      default:
-        
-        break;
+      
     }
   }
     return (
