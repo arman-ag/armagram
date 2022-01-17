@@ -1,8 +1,8 @@
 const open=(text:string)=>{
-    return{type:"OPEN",open:"flex",text}
+    return{type:"OPEN_REPLAY",openReply:"flex",text}
 }
 const close=()=>{
-    return {type:"CLOSE",open:"none"}
+    return {type:"CLOSE_REPLAY",openReply:"none"}
 }
 export const replyAction={
     close,

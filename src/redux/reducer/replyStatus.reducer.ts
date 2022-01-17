@@ -1,22 +1,24 @@
 const initialState={
-    display:"none"
+    display:"none",
+    replyText:""
 }
 const replyStatus = (state = initialState,action:any)=>{
-    switch(action.type){
-        case "OPEN":
+    switch(action?.type){
+        case "OPEN_REPLAY":
             return{
                 ...state,
-                display:action.open,
-                replyText:action.text
+                display:action?.openReply,
+                replyText:action?.text
             }
-            case "CLOSE":
+            case "CLOSE_REPLAY":
+
 
                 return{
 ...state,
- display:action.open
+ display:action?.openReply
                 }
                 default:
-                    return state
+                    return {...state}
     }
 }
 export default replyStatus
