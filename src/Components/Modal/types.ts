@@ -1,3 +1,3 @@
-export interface modalType{
-    children: JSX.Element
+export interface modalType {
+  children: JSX.Element;
 }

@@ -1,23 +1,21 @@
-
 const initialState = {
-  message:[],
-  mounted:false
+  message: [],
+  mounted: false
 };
-const message = (state = initialState, action:any) => {
+const message = (state = initialState, action: any) => {
   switch (action.type) {
-    case "+5432789512":
+    case '+5432789512':
       return {
         ...state,
-        message:action.data,
-        mounted:action.mounted
+        message: action.data,
+        mounted: action.mounted
       };
-      case"+2132789512":
-
-      return{
+    case '+2132789512':
+      return {
         ...state,
-        message:action.data,
-        mounted:action.mounted
-      }
+        message: action.data,
+        mounted: action.mounted
+      };
     default:
       return state;
   }

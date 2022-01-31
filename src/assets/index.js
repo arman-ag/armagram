@@ -1,2 +1,2 @@
-export * from "./dataMessage";
-export * from "./profileData";
+export * from './dataMessage';
+export * from './profileData';

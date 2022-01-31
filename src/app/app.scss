@@ -1,25 +1,21 @@
-.header{
-    grid-area: header;
-
+.header {
+  grid-area: header;
 }
-.menu{
-    grid-area: menu;
-
+.menu {
+  grid-area: menu;
 }
-.chat-section{
-    grid-area:chat;
+.chat-section {
+  grid-area: chat;
 }
-.container{
-    height: 100%;
-    overflow: auto;
+.container {
+  height: 100%;
+  overflow: auto;
   background-color: #c2eaba;
   background-image: linear-gradient(319deg, #c2eaba 0%, #c5f4e0 37%, #efc2cf 100%);
-display: grid;
-grid-template:
-"menu header header header "55px
-"menu .  chat  .  "480px
-"menu . chat .  "auto/
-2fr 1fr 3fr 1fr;
-
+  display: grid;
+  grid-template:
+    'menu header header header ' 55px
+    'menu .  chat  .  ' 480px
+    'menu . chat .  ' auto/
+    2fr 1fr 3fr 1fr;
 }
- 

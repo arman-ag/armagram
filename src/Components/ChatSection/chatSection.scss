@@ -1,201 +1,193 @@
-@import "./../../sassStyles/variables";
-@import "./../../sassStyles/typography";
-@import "./../../sassStyles/global";
-.input-style{
+@import './../../sassStyles/variables';
+@import './../../sassStyles/typography';
+@import './../../sassStyles/global';
+.input-style {
+  background-color: $white-1;
+  width: 100%;
+  height: 51px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 12px;
+  align-items: center;
+  input {
+    width: 60%;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: $gray-2;
+      font-size: $medium-font;
+    }
+  }
+  button {
+    @extend%btn;
+  }
+}
+.message {
+  background-color: $white-1;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+  // display: inline-block;
+  width: max-content;
+  margin-top: 10px;
+  &-send {
+    align-self: flex-end;
 
+    background-color: $green-1;
+    .angle {
+      position: absolute;
+      top: 15%;
+      right: -8px;
+      border-style: solid;
+      border-width: 10px 0 10px 15px;
+      border-color: transparent transparent transparent $green-1;
+    }
+  }
+  &-receive {
     background-color: $white-1;
-        width:100%;
-        height:51px;
-        display: flex;
-        justify-content: space-around;
-        border-radius: 12px;
-        align-items: center;
-        input{
-           width: 60%;
-           border:none;
-           &:focus{outline:none};
-           &::placeholder {
-               color: $gray-2;
-        font-size:$medium-font;
-        };
-        
+    .angle {
+      position: absolute;
+      bottom: 15%;
+      left: -8px;
+      border-style: solid;
+      border-width: 10px 15px 10px 0;
+      border-color: transparent $white-1 transparent transparent;
     }
-    button {
-@extend%btn
-    }
-
+  }
 }
-.message{
-    background-color: $white-1;
-    padding: 10px;
-    border-radius: 8px ;
-    position: relative;
-    // display: inline-block;
-    width: max-content;
-    margin-top: 10px;
-    &-send{
-        align-self: flex-end;
-
-        background-color: $green-1;
-        .angle{
-        position: absolute;
-        top: 15%;
-        right:-8px;
-border-style: solid;
-border-width: 10px 0 10px 15px;
-border-color: transparent transparent transparent $green-1;
-        }
-    }
-    &-receive{
-        background-color: $white-1;
- .angle {
-     position: absolute;
-     bottom: 15%;
-     left: -8px;
-    border-style: solid;
-    border-width: 10px 15px 10px 0;
-    border-color: transparent $white-1 transparent transparent;
-
- }
-    }
-}
-.chat-section{
-   
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-   align-items: center;
-   &-message{
-       width: 100%;
-       display: flex;
-       flex-direction: column;
-   }
-}
-.send-box{
-    position: sticky;
-    bottom:0px;
-    margin-bottom: 20px;
-    display: flex;
+.chat-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  &-message {
     width: 100%;
-    &-input{
-        flex-grow: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background-color: $white-1;
-        border-radius: 12px;
-.reply-box{
-    padding-top: 5px;
-    position: relative;
-    width:100%;
-    height: 51px;
     display: flex;
-    justify-content: space-between;
-    &-horizontal{
-         margin-right:10px;
-         height:32px;
-         width:2px;
-         background-color: $blue-1;
-    };
-    &-figure{
+    flex-direction: column;
+  }
+}
+.send-box {
+  position: sticky;
+  bottom: 0px;
+  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+  &-input {
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $white-1;
+    border-radius: 12px;
+    .reply-box {
+      padding-top: 5px;
+      position: relative;
+      width: 100%;
+      height: 51px;
+      display: flex;
+      justify-content: space-between;
+      &-horizontal {
+        margin-right: 10px;
+        height: 32px;
+        width: 2px;
+        background-color: $blue-1;
+      }
+      &-figure {
         display: flex;
         align-items: center;
-    }
-    &-text{
-        display:flex;
+      }
+      &-text {
+        display: flex;
         height: 100%;
         width: 80%;
         flex-direction: column;
         justify-content: space-between;
-       flex-grow: 2;
-        &-message{
-            align-self:flex-end;
-            color:$gray-3
+        flex-grow: 2;
+        &-message {
+          align-self: flex-end;
+          color: $gray-3;
         }
-        &-number{
-            color:$blue-1;
-            flex-grow: 1;
-            text-align: start;
+        &-number {
+          color: $blue-1;
+          flex-grow: 1;
+          text-align: start;
         }
-        .container-text{
-            align-self:flex-end;
-            display: flex;
-            flex-direction: column;
-          
-    }
-    }
-
-}
-        
-
-    };
-    &-button{
-    box-shadow: 5px 5px 36px -11px rgba(114, 114, 114, 0.78);
-        align-self: flex-end;
-        display: flex;
-        align-items: center;
-        margin-left: 10px;
-        background-color: $white-1;
-        border-radius: 50px;
-        width:45px;
-        height:50px;
-        button {
-       @extend%btn;
-        
-       &:hover{
-           background-color: rgba(255, 255, 255, 0);
-       }
+        .container-text {
+          align-self: flex-end;
+          display: flex;
+          flex-direction: column;
         }
-            }
-   align-items: center;
-}
-.message-reply{
-    display: flex;
-    font-size: $smallest-font;
-    &-horizontal{
-        margin-right:10px;
-      height:32px;
-      width:2px;
-      background-color: $green-2;
-    display: inline-block;
-    }
-    &-box{
-display: flex;
-flex-direction: column;
-
-&-phone{
-font-weight:bold;
-font-size: $small-font;
-color:$green-2
-}
-    }
-}
-  .container-text-button {
-      @extend%btn;
-      position: absolute;
-      right:0;
-      top:0
-  }
-  .reply-box-text-message{
-      height: 100%;
-      display: flex;
-      align-items: end;
-      margin-right: 10px;
-
-  }
-  
-  .reply-container {
-      display: flex;
-      .message-reply{
-            @extend%btn;
-            margin-right: 2px;
-             &:hover {
-                 background-color: rgba(255, 255, 255, 0);
-             }
       }
+    }
   }
-
-  .reply-receive{
+  &-button {
+    box-shadow: 5px 5px 36px -11px rgba(114, 114, 114, 0.78);
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
     margin-left: 10px;
+    background-color: $white-1;
+    border-radius: 50px;
+    width: 45px;
+    height: 50px;
+    button {
+      @extend%btn;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
   }
+  align-items: center;
+}
+.message-reply {
+  display: flex;
+  font-size: $smallest-font;
+  &-horizontal {
+    margin-right: 10px;
+    height: 32px;
+    width: 2px;
+    background-color: $green-2;
+    display: inline-block;
+  }
+  &-box {
+    display: flex;
+    flex-direction: column;
+
+    &-phone {
+      font-weight: bold;
+      font-size: $small-font;
+      color: $green-2;
+    }
+  }
+}
+.container-text-button {
+  @extend%btn;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.reply-box-text-message {
+  height: 100%;
+  display: flex;
+  align-items: end;
+  margin-right: 10px;
+}
+
+.reply-container {
+  display: flex;
+  .message-reply {
+    @extend%btn;
+    margin-right: 2px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0);
+    }
+  }
+}
+
+.reply-receive {
+  margin-left: 10px;
+}

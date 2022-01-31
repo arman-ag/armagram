@@ -1,71 +1,64 @@
-@import "./../../sassStyles/variables";
-@import "./../../sassStyles/global";
-@import "./../../sassStyles/typography";
+@import './../../sassStyles/variables';
+@import './../../sassStyles/global';
+@import './../../sassStyles/typography';
 
-.contact-menu{
- width: 350px;
-     overflow: auto;
-      height: 500px;
- border-radius: 5px;
+.contact-menu {
+  width: 350px;
+  overflow: auto;
+  height: 500px;
+  border-radius: 5px;
 }
-.contact-header{
-    width:100%;
-    background-color: white;
-    position:sticky ;
-    top:0;
- z-index: 5;
- border-bottom: 1px black solid;
-    align-items: center;
-    height: 56px;
-    display: flex;
-    button{
-@extend%btn;
-    }
-    &-title{
-        font-size:$large-font;
-        font-weight:500 ;
-        text-align: center;
- flex-grow: 2
-    }
+.contact-header {
+  width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  border-bottom: 1px black solid;
+  align-items: center;
+  height: 56px;
+  display: flex;
+  button {
+    @extend%btn;
+  }
+  &-title {
+    font-size: $large-font;
+    font-weight: 500;
+    text-align: center;
+    flex-grow: 2;
+  }
 }
 .single-contact {
-    cursor: pointer;
+  cursor: pointer;
+  display: flex;
+  height: 72px;
+  align-items: center;
+  margin-top: 12px;
+  &:hover {
+    background-color: $gray-2;
+  }
+
+  .profile {
+    width: 55px;
+    height: 54px;
+    border-radius: 100%;
+    margin: 0 15px;
+  }
+  .profile-info {
     display: flex;
-    height: 72px;
-    align-items: center;
-    margin-top:12px;
-    &:hover{
-        background-color: $gray-2;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      margin: 0;
     }
+  }
+  .single-contact-phone {
+    display: flex;
 
-    .profile {
-        width: 55px;
-        height: 54px;
-        border-radius: 100%;
-        margin: 0 15px
+    &-text {
+      color: $gray-3;
     }
-    .profile-info {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-
-        h3 {
-            margin: 0
-        }
-    }
-    .single-contact-phone {
-        display: flex;
-
-
-        &-text {
-            color: $gray-3
-        }
-
-        
-    }
+  }
 }
-
-
-
-
