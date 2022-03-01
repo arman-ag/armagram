@@ -4,6 +4,7 @@ import { profileAction } from '../../redux/actions';
 import ContactHeader from './ContactHeader';
 import './contactStyle.scss';
 import SingleContact from './SingleContact';
+import { contactType } from './typese';
 const Contacts = () => {
   const dispatch = useDispatch();
   const profiles = useSelector((state: any) => state.profile.profile);
@@ -11,11 +12,12 @@ const Contacts = () => {
   useEffect(() => {
     dispatch(profileAction.getAllProfile());
   }, [dispatch]);
+  console.log(profiles, 'profiles');
 
   return (
     <div className="contact-menu">
       <ContactHeader />
-      {profiles?.map((item: any) => (
+      {profiles?.map((item: contactType) => (
         <SingleContact profileData={item} key={item.id} />
       ))}
     </div>

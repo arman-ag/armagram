@@ -9,7 +9,7 @@ import { messagesType } from './types';
 const ChatSection = () => {
   const messages: messagesType[] = useSelector((state: any) => state.message.message);
   const mounted: boolean = useSelector((state: any) => state.message.mounted);
-  const choseType = (item: messagesType, index: number) => {
+  const choseType = <T extends messagesType, U extends number>(item: T, index: U) => {
     if (item.type === 'receive') {
       return <MessageReceive text={item.message} key={index} />;
     } else if (item.type === 'send') {

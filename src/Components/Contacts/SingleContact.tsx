@@ -1,7 +1,8 @@
+import { menuItemProps } from 'Components/Menu/types';
 import React from 'react';
 import './contactStyle.scss';
 
-const SingleContact = ({ profileData }: any) => {
+const SingleContact = ({ profileData }: menuItemProps) => {
   const image = () => {
     switch (profileData?.name) {
       case 'Shakira':

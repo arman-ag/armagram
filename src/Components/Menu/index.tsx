@@ -8,6 +8,7 @@ import './menuStyle.scss';
 const Menu = () => {
   const dispatch = useDispatch();
   const profile: any = useSelector((state: any) => state.profile.profile);
+
   useEffect(() => {
     dispatch(profileAction.getAllProfile());
   }, [dispatch]);

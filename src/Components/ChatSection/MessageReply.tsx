@@ -1,6 +1,8 @@
 import React from 'react';
 import './chatSection.scss';
-const MessageReply = ({ text }: any) => {
+import { messageReplyProps } from './types';
+
+const MessageReply = ({ text }: messageReplyProps) => {
   return (
     <div className="message message-send  ">
       <div className="message-reply">

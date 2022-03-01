@@ -23,7 +23,6 @@ const ProfileMenu = () => {
     <div className="ProfileMenu">
       <ProfileHeader />
       <div className="profileImage">
-        {/* <img src={require(profile?.profileImage)}  alt="profile header" /> */}
         {image()}
         <div className="profileImage-caption">
           <span className="profileImage-caption-name">{profile.name}</span>

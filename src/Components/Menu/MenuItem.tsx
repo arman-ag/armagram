@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { messageAction, singleProfileAction } from '../../redux/actions';
 import './menuStyle.scss';
+import { menuItem, menuItemProps } from './types';
 
-const MenuItem = ({ profileData }: any) => {
+const MenuItem = ({ profileData }: menuItemProps) => {
   const dispatch = useDispatch();
   const messages = useSelector((state: any) => state.message.message);
   const state = useSelector((state: any) => state);
 
   const phone: string = profileData.phone;
-  console.log('stacsate', state);
 
   useEffect(() => {
     dispatch(messageAction.getMessage(phone, false));
@@ -19,7 +19,7 @@ const MenuItem = ({ profileData }: any) => {
     dispatch(messageAction.getMessage(phone, true));
     dispatch(singleProfileAction.getSingleProfile(phone));
   };
-  const image = () => {
+  const image = (profileData: menuItem) => {
     switch (profileData?.name) {
       case 'Shakira':
         return (
@@ -27,15 +27,12 @@ const MenuItem = ({ profileData }: any) => {
         );
 
       case 'Joe Biden':
-        const biden = 'biden.jpg';
-        return <img src={require(`assets/images/${biden}`)} alt="profile " className="profile" />;
+        return <img src={require('assets/images/biden.jpg')} alt="profile " className="profile" />;
     }
   };
   return (
     <div className="menu-item" onClick={receiveMessage}>
-      {
-        // <img src={require(`assets/images/${profileData?.name}`)} alt="profile " className="profile" />
-      }
+      {image(profileData)}
       <div className="profile-info">
         <h3>{profileData?.name}</h3>
         <div className="last-message">

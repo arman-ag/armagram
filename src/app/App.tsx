@@ -6,10 +6,9 @@ import Menu from '../Components/Menu';
 import Modal from '../Components/Modal';
 import ProfileMenu from '../Components/ProfileMenu';
 import './app.scss';
-function App() {
+const App: React.FC = () => {
   const status = useSelector((state: any) => state.modal.status);
 
-  console.log('status', status);
   return (
     <div className="container">
       <Header />
@@ -27,6 +26,6 @@ function App() {
         ))}
     </div>
   );
-}
+};
 
 export default App;

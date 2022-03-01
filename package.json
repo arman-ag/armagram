@@ -10,6 +10,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "@types/react-redux": "^7.1.22",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
@@ -43,12 +44,14 @@
     ]
   },
   "devDependencies": {
+    "@types/redux": "^3.6.0",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "typesafe-actions": "^5.1.0"
   }
 }

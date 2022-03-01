@@ -9,9 +9,7 @@ export interface messageText {
 export interface allMessageType {
   allMessages: { type: string; message: string; replyMessage?: string }[];
 }
-export interface replyType {
-  text: {
-    replyMessage: string;
-    message: string;
-  };
+
+export interface messageReplyProps {
+  text: { type: string; message: string; replyMessage?: string };
 }
