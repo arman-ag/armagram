@@ -59,15 +59,15 @@ const InputSection = ({ allMessages }: allMessageType) => {
           </div>
         </div>
 
-        <div className="input-style">
+        <form className="input-style">
           <button>
             <BsEmojiSmile color="#A8ABAD" size="25px" />
           </button>
           <input value={text} placeholder="Message" type="text" onChange={textEntry} />
-          <button>
+          <button type="submit">
             <AiOutlinePaperClip color="#A8ABAD" size="25px" />
           </button>
-        </div>
+        </form>
       </div>
       <div className="send-box-button">
         <button type="submit" onClick={send}>

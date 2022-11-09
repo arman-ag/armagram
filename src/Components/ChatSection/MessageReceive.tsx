@@ -1,4 +1,3 @@
-import React from 'react';
 import { BsReply } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { replyAction } from 'redux/actions';
