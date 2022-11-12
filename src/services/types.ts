@@ -12,5 +12,5 @@ interface messageType {
 }
 
 export interface sendMessageType {
-  (): Promise<messageType>;
+  (message: string): Promise<messageType>;
 }

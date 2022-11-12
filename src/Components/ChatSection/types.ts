@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface messagesType {
   type: string;
   message: string;
@@ -8,6 +10,9 @@ export interface messageText {
 }
 export interface allMessageType {
   allMessages: { type: string; message: string; replyMessage?: string }[];
+  setText: React.Dispatch<React.SetStateAction<string>>;
+  text: string;
+  send: (e: React.FormEvent) => void;
 }
 
 export interface messageReplyProps {
