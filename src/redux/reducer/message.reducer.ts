@@ -1,5 +1,5 @@
 const initialState = {
-  message: [],
+  allMessages: [],
   mounted: false
 };
 const message = (state = initialState, action: any) => {
@@ -7,9 +7,10 @@ const message = (state = initialState, action: any) => {
     case '+5432789512':
       return {
         ...state,
-        message: action.data,
+        allMessages: action.allMessages,
         mounted: action.mounted
       };
+
     case '+2132789512':
       return {
         ...state,

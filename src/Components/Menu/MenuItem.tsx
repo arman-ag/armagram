@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { messageAction, singleProfileAction } from '../../redux/actions';
 import './menuStyle.scss';
@@ -36,7 +36,7 @@ const MenuItem = ({ profileData }: menuItemProps) => {
       <div className="profile-info">
         <h3>{profileData?.name}</h3>
         <div className="last-message">
-          <span className="last-message-text">{messages[messages.length - 1]?.message} </span>
+          {/* <span className="last-message-text">{messages[messages.length - 1]?.message} </span> */}
         </div>
       </div>
     </div>
