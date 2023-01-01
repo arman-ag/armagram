@@ -12,11 +12,11 @@ const MenuItem = ({ profileData }: menuItemProps) => {
   const phone: string = profileData.phone;
 
   useEffect(() => {
-    dispatch(messageAction.getMessage(phone, false));
+    // dispatch(messageAction.getMessage(phone, false));
   }, [dispatch, phone]);
 
   const receiveMessage = () => {
-    dispatch(messageAction.getMessage(phone, true));
+    dispatch(messageAction.openPanel(phone, true));
     dispatch(singleProfileAction.getSingleProfile(phone));
   };
   const image = (profileData: menuItem) => {
