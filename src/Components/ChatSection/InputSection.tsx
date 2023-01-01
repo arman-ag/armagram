@@ -18,7 +18,7 @@ const InputSection = ({ allMessages, setText, text, send }: allMessageType) => {
   };
 
   return (
-    <div className="send-box">
+    <form className="send-box" onSubmit={send}>
       <div className="send-box-input">
         <div style={{ display: display }} className="reply-box">
           <div className="reply-box-figure">
@@ -34,8 +34,7 @@ const InputSection = ({ allMessages, setText, text, send }: allMessageType) => {
             <div className="reply-box-text-message">{replyText}</div>
           </div>
         </div>
-
-        <form className="input-style">
+        <div className="input-style">
           <button>
             <BsEmojiSmile color="#A8ABAD" size="25px" />
           </button>
@@ -43,14 +42,14 @@ const InputSection = ({ allMessages, setText, text, send }: allMessageType) => {
           <button type="submit">
             <AiOutlinePaperClip color="#A8ABAD" size="25px" />
           </button>
-        </form>
+        </div>
       </div>
       <div className="send-box-button">
         <button type="submit" onClick={send}>
           <IoMdSend size={37} color="#3390EC" />
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
