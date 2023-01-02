@@ -1,4 +1,3 @@
-import React from 'react';
 import { BsPencil } from 'react-icons/bs';
 import { RiCloseLine } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
