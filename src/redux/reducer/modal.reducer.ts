@@ -1,5 +1,5 @@
 const initialState = {
-  status: { open: false, element: '' }
+  status: { open: true, element: 'contact' }
 };
 const isOpen = (state = initialState, action: any) => {
   switch (action.type) {

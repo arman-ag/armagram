@@ -8,6 +8,7 @@ import ProfileMenu from '../Components/ProfileMenu';
 import './app.scss';
 const App: React.FC = () => {
   const status = useSelector((state: any) => state.modal.status);
+  console.log('status', status);
 
   return (
     <div className="container">
