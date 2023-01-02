@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { profileAction } from '../../redux/actions';
 import ContactHeader from './ContactHeader';
@@ -12,7 +12,6 @@ const Contacts = () => {
   useEffect(() => {
     dispatch(profileAction.getAllProfile());
   }, [dispatch]);
-  console.log(profiles, 'profiles');
 
   return (
     <div className="contact-menu">

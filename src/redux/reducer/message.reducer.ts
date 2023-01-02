@@ -2,7 +2,6 @@ const initialState = {
   mounted: false
 };
 const message = (state = initialState, action: any) => {
-  console.log('action', action);
   switch (action.type) {
     case '+5432789512': {
       const messageList = [...(state['+5432789512'] ?? []), action?.message].filter(

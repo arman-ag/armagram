@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { modalAction, profileAction } from '../../redux/actions';
@@ -7,7 +7,7 @@ import './menuStyle.scss';
 
 const Menu = () => {
   const dispatch = useDispatch();
-  const profile: any = useSelector((state: any) => state.profile.profile);
+  const contacts: any = useSelector((state: any) => state.selectedProfile);
 
   useEffect(() => {
     dispatch(profileAction.getAllProfile());
@@ -26,7 +26,7 @@ const Menu = () => {
           contact list{' '}
         </button>
       </div>
-      {profile.map((item: any, index: number) => (
+      {contacts?.map((item: any, index: number) => (
         <MenuItem profileData={item} key={item.id} />
       ))}
     </div>
