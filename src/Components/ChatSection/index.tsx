@@ -16,10 +16,8 @@ const ChatSection = () => {
   const profile = useSelector((state: any) => state.singleProfile.profile);
   const { phone } = profile;
 
-  console.log(messages);
   //prepare text to send
   const send = (e: React.ChangeEvent) => {
-    e.preventDefault();
     if (text?.length > 0) {
       setText('');
       dispatch(messageAction.uMessage(text, phone, true));
@@ -39,10 +37,12 @@ const ChatSection = () => {
     }
   };
   return (
-    <div style={mounted ? { display: 'flex' } : { display: 'none' }} className="chat-section">
-      <div className="chat-section-message">
+    <div
+      style={Object.keys(profile).length ? { display: 'flex' } : { display: 'none' }}
+      className="chat-section">
+      {/* <div className="chat-section-message">
         {messages?.[phone]?.map((item, index) => choseType(item, index))}
-      </div>
+      </div> */}
       <InputSection allMessages={messages} setText={setText} text={text} send={send} />
     </div>
   );

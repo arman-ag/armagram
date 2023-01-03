@@ -1,10 +1,8 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { modalAction } from '../../redux/actions';
 import './headerStyle.scss';
 const ProfileInfo = () => {
   const profile = useSelector((state: any) => state.singleProfile.profile);
-
   const image = () => {
     switch (profile?.name) {
       case 'Shakira':
@@ -21,7 +19,7 @@ const ProfileInfo = () => {
     <div className="header-profile" onClick={() => dispatch(modalAction.open('profileMenu'))}>
       {image()}
       <div className="info">
-        <h3>{profile.name}</h3>
+        <h3>{profile?.name}</h3>
         <span>last seen recently</span>
       </div>
     </div>

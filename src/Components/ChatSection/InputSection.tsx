@@ -10,7 +10,7 @@ import { allMessageType } from './types';
 const InputSection = ({ allMessages, setText, text, send }: allMessageType) => {
   const dispatch = useDispatch();
   const display: string = useSelector((state: any) => state.replyStatus.display);
-  const phone: string = useSelector((state: any) => state.singleProfile.profile.phone);
+  // const phone: string = useSelector((state: any) => state.singleProfile.profile.phone);
   const replyText: string = useSelector((state: any) => state.replyStatus.replyText);
 
   const textEntry = (e) => {
@@ -26,7 +26,7 @@ const InputSection = ({ allMessages, setText, text, send }: allMessageType) => {
             <div className="reply-box-horizontal" />
           </div>
 
-          <div className="reply-box-text-number"> {phone}</div>
+          {/* <div className="reply-box-text-number"> {phone}</div> */}
           <div className="container-text">
             <button className="container-text-button" onClick={() => dispatch(replyAction.close())}>
               <RiCloseLine style={{ marginBottom: '-3px' }} size="25" color=" #2c3e50" />

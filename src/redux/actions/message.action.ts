@@ -1,8 +1,7 @@
 import { sendService } from 'services';
 
 const openPanel = (phoneNum: string, mounted: boolean) => {
-  // const { [phoneNum]: data }: message = dataMessage;
-  return { type: phoneNum, mounted };
+  return { type: 'user-message', user: { phoneNum, mounted } };
 };
 const uMessage = (userMessage, phone: string, mounted: boolean) => {
   return (dispatch) => {

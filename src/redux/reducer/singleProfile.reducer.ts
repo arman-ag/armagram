@@ -3,10 +3,10 @@ const initialState = {
 };
 const singleProfile = (state = initialState, action: any) => {
   switch (action.type) {
-    case 'SINGLE_PROFILE':
+    case 'selected_profile':
       return {
         ...state,
-        profile: action.data
+        profile: action?.singleProfile
       };
     default:
       return state;

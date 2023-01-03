@@ -6,7 +6,7 @@ const profile = (state = initialState, action: any) => {
     case 'ALL_PROFILE':
       return {
         ...state,
-        profile: action.data
+        profile: action.profileData
       };
 
     default:
