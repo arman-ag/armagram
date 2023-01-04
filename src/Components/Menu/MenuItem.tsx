@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { messageAction, singleProfileAction } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { singleProfileAction } from '../../redux/actions';
 import './menuStyle.scss';
 import { menuItem, menuItemProps } from './types';
 
 const MenuItem = ({ profileData }: menuItemProps) => {
   const dispatch = useDispatch();
-  const messages = useSelector((state: any) => state.message.message);
-  const state = useSelector((state: any) => state);
+  // const messages = useSelector((state: any) => state.message.message);
+  // const state = useSelector((state: any) => state);
 
   const phone: string = profileData.phone;
 
@@ -16,7 +16,6 @@ const MenuItem = ({ profileData }: menuItemProps) => {
   }, [dispatch, phone]);
 
   const receiveMessage = () => {
-    dispatch(messageAction.openPanel(phone, true));
     dispatch(singleProfileAction.getSingleProfile(phone));
   };
   const image = (profileData: menuItem) => {

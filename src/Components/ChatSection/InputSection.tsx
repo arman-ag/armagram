@@ -7,7 +7,7 @@ import { replyAction } from '../../redux/actions';
 import './chatSection.scss';
 import { allMessageType } from './types';
 
-const InputSection = ({ allMessages, setText, text, send }: allMessageType) => {
+const InputSection = ({ setText, text, send }: allMessageType) => {
   const dispatch = useDispatch();
   const display: string = useSelector((state: any) => state.replyStatus.display);
   // const phone: string = useSelector((state: any) => state.singleProfile.profile.phone);

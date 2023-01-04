@@ -1,33 +1,23 @@
 import { sendService } from 'services';
 
-const openPanel = (phoneNum: string, mounted: boolean) => {
-  return { type: 'user-message', user: { phoneNum, mounted } };
-};
-const uMessage = (userMessage, phone: string, mounted: boolean) => {
-  return (dispatch) => {
-    dispatch({
-      type: phone,
-      message: userMessage,
-      mounted
-    });
-  };
-};
-const send = (userMessage: string, phone: string, mounted: boolean) => {
+const userMessage = (userMessage, phone) => {
   return async (dispatch) => {
+    dispatch(sendMessage(userMessage, phone));
     const {
       data: { message }
     } = await sendService.getMessage(userMessage);
 
-    dispatch({
-      type: phone,
-      message,
-      mounted
-    });
+    dispatch(sendMessage(message, phone));
+  };
+};
+const sendMessage = (userMessage, phone) => {
+  return {
+    type: 'user_message',
+    phone,
+    userMessage
   };
 };
 
 export const messageAction = {
-  uMessage,
-  openPanel,
-  send
+  userMessage
 };
