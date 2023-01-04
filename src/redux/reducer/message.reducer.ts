@@ -1,4 +1,4 @@
-const initialState = {};
+const initialState = { sendPermission: true };
 
 const message = (state = initialState, action) => {
   switch (action.type) {
@@ -8,7 +8,13 @@ const message = (state = initialState, action) => {
         ...state,
         [action.phone]: {
           message: [...(state[action.phone]?.message || []), action?.userMessage]
-        }
+        },
+        sendPermission: action.Permission
+      };
+    case 'send_message_fail':
+      return {
+        openModal: action?.openModal || false,
+        message: action?.err
       };
     case 'delete_message':
       return;

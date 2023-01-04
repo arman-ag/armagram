@@ -12,11 +12,11 @@ const InputSection = ({ setText, text, send }: allMessageType) => {
   const display: string = useSelector((state: any) => state.replyStatus.display);
   // const phone: string = useSelector((state: any) => state.singleProfile.profile.phone);
   const replyText: string = useSelector((state: any) => state.replyStatus.replyText);
+  const permission = useSelector((state: any) => state.message.sendPermission);
 
   const textEntry = (e) => {
     setText(e.target.value);
   };
-
   return (
     <form className="send-box" onSubmit={send}>
       <div className="send-box-input">
@@ -39,13 +39,13 @@ const InputSection = ({ setText, text, send }: allMessageType) => {
             <BsEmojiSmile color="#A8ABAD" size="25px" />
           </button>
           <input value={text} placeholder="Message" type="text" onChange={textEntry} />
-          <button type="submit">
+          <button>
             <AiOutlinePaperClip color="#A8ABAD" size="25px" />
           </button>
         </div>
       </div>
       <div className="send-box-button">
-        <button type="submit" onClick={send}>
+        <button type="submit" onClick={send} disabled={!permission}>
           <IoMdSend size={37} color="#3390EC" />
         </button>
       </div>

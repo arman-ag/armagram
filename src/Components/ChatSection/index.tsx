@@ -18,10 +18,12 @@ const ChatSection = () => {
   //prepare text to send
   const send = (e: React.ChangeEvent) => {
     e.preventDefault();
-    if (text?.length > 0) {
+
+    if (text?.length > 0 && messages.sendPermission) {
       setText('');
       dispatch(messageAction.userMessage(text, phone));
     }
+    return messages.sendPermission;
   };
   const choseType = (item, index) => {
     if (index % 2 == 0) {
