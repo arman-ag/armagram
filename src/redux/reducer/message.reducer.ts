@@ -3,7 +3,6 @@ const initialState = { sendPermission: true };
 const message = (state = initialState, action) => {
   switch (action.type) {
     case 'user_message':
-      console.log(action);
       return {
         ...state,
         [action.phone]: {
@@ -13,7 +12,7 @@ const message = (state = initialState, action) => {
       };
     case 'send_message_fail':
       return {
-        openModal: action?.openModal || false,
+        openModal: action?.openModal,
         message: action?.err
       };
     case 'delete_message':

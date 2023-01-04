@@ -11,7 +11,6 @@ const ChatSection = () => {
 
   const display: string = useSelector((state: any) => state.replyStatus.display);
   const messages = useSelector((state: any) => state.message);
-  console.log(messages);
   const profile = useSelector((state: any) => state.singleProfile.profile);
   const { phone } = profile;
 

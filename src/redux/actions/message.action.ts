@@ -10,7 +10,7 @@ const userMessage = (userMessage, phone) => {
       dispatch(sendMessage(message, phone, true));
     } catch (err) {
       console.log(err);
-      dispatch(sendMessageFail(err.message + 'please use proxy to use app'));
+      dispatch(sendMessageFail(err.message + ' please use proxy to use app'));
     }
   };
 };
