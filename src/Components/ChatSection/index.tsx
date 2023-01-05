@@ -17,7 +17,6 @@ const ChatSection = () => {
   //prepare text to send
   const send = (e: React.ChangeEvent) => {
     e.preventDefault();
-
     if (text?.length > 0 && messages.sendPermission) {
       setText('');
       dispatch(messageAction.userMessage(text, phone));
@@ -26,9 +25,9 @@ const ChatSection = () => {
   };
   const choseType = (item, index) => {
     if (index % 2 == 0) {
-      return <MessageSend text={item} key={index} />;
+      return <MessageSend time={item.time} text={item.message} key={index} />;
     } else {
-      return <MessageReceive text={item} key={index} />;
+      return <MessageReceive time={item.time} text={item.message} key={index} />;
     }
   };
   return (

@@ -9,16 +9,17 @@ const userMessage = (userMessage, phone) => {
       } = await sendService.getMessage(userMessage);
       dispatch(sendMessage(message, phone, true));
     } catch (err) {
-      console.log(err);
       dispatch(sendMessageFail(err.message + ' please use proxy to use app'));
     }
   };
 };
-const sendMessage = (userMessage, phone, Permission) => {
+const sendMessage = (message, phone, Permission) => {
+  const time = new Date();
   return {
     type: 'user_message',
     phone,
-    userMessage,
+    userMessage: { message, time },
+    date: time,
     Permission
   };
 };

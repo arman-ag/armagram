@@ -7,6 +7,7 @@ export interface messagesType {
 }
 export interface messageText {
   text: string;
+  time: Date;
 }
 export interface allMessageType {
   setText: React.Dispatch<React.SetStateAction<string>>;
