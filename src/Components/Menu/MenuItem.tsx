@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { singleProfileAction } from '../../redux/actions';
 import './menuStyle.scss';
-import { menuItem, menuItemProps } from './types';
+import { menuItemProps } from './types';
 
 const MenuItem = ({ profileData }: menuItemProps) => {
   const dispatch = useDispatch();
@@ -18,20 +18,10 @@ const MenuItem = ({ profileData }: menuItemProps) => {
   const receiveMessage = () => {
     dispatch(singleProfileAction.getSingleProfile(phone));
   };
-  const image = (profileData: menuItem) => {
-    switch (profileData?.name) {
-      case 'Shakira':
-        return (
-          <img src={require('assets/images/shakira.jpg')} alt="profile " className="profile" />
-        );
 
-      case 'Joe Biden':
-        return <img src={require('assets/images/biden.jpg')} alt="profile " className="profile" />;
-    }
-  };
   return (
     <div className="menu-item" onClick={receiveMessage}>
-      {image(profileData)}
+      <img src={profileData.profileImage} alt="profile " className="profile" />
       <div className="profile-info">
         <h3>{profileData?.name}</h3>
         <div className="last-message">

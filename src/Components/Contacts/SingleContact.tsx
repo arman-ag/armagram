@@ -14,24 +14,9 @@ const SingleContact = ({ profileData }: menuItemProps) => {
     dispatch(modalAction.close());
   };
 
-  const image = () => {
-    switch (profileData?.name) {
-      case 'Shakira':
-        return (
-          <img src={require('assets/images/shakira.jpg')} alt="profile " className="profile" />
-        );
-
-      case 'Joe Biden':
-        return <img src={require('assets/images/biden.jpg')} alt="profile " className="profile" />;
-
-      default:
-        break;
-    }
-  };
-
   return (
     <div className="single-contact" onClick={() => choseUser(profileData)}>
-      {image()}
+      <img src={profileData.profileImage} alt="profile " className="profile" />
       <div className="profile-info">
         <h3>{profileData?.name}</h3>
         <div className="single-contact-phone">
