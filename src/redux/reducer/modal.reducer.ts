@@ -1,5 +1,6 @@
+const openContactModal = localStorage.getItem('user_selected_profile') ? false : true;
 const initialState = {
-  status: { open: true, element: 'contact' }
+  status: { open: openContactModal, element: 'contact' }
 };
 const isOpen = (state = initialState, action: any) => {
   switch (action.type) {

@@ -1,15 +1,25 @@
-const initialState = { sendPermission: true };
+const JsonStoredData = localStorage.getItem('user_data_message');
+const storedData = JSON.parse(JsonStoredData) || { sendPermission: true };
 
-const message = (state = initialState, action) => {
+const saveLocalStorage = (receiveOrNot, item) => {
+  if (receiveOrNot) {
+    localStorage.setItem('user_data_message', JSON.stringify(item));
+  }
+  return item;
+};
+
+const message = (state = storedData, action) => {
   switch (action.type) {
     case 'user_message':
-      return {
+      // eslint-disable-next-line no-case-declarations
+      const receiveOrNot = state[action.phone]?.message.length % 2 == 1;
+      return saveLocalStorage(receiveOrNot, {
         ...state,
         [action.phone]: {
           message: [...(state[action.phone]?.message || []), action?.userMessage]
         },
         sendPermission: action.Permission
-      };
+      });
     case 'send_message_fail':
       return {
         openModal: action?.openModal,

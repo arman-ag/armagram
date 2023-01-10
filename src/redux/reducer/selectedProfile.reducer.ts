@@ -1,8 +1,14 @@
-const initialState = [];
-const selectedProfile = (state = initialState, action: any) => {
+const JsonStoredSelectedProfile = localStorage.getItem('user_selected_profile');
+const storedSelectedProfile = JSON.parse(JsonStoredSelectedProfile) || [];
+
+const saveLocalStorage = (item) => {
+  localStorage.setItem('user_selected_profile', JSON.stringify(item));
+  return item;
+};
+const selectedProfile = (state = storedSelectedProfile, action: any) => {
   switch (action.type) {
     case 'addContact': {
-      return [...state, action.profileData];
+      return saveLocalStorage([...state, action.profileData]);
     }
     case 'deleteContact':
       return;

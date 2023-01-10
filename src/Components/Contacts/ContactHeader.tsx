@@ -9,7 +9,7 @@ const ContactHeader = () => {
       <button onClick={() => dispatch(modalAction.close())}>
         <RiCloseLine style={{ marginBottom: '-3px' }} size="25" color=" #2c3e50" />
       </button>
-      <div className="contact-header-title">start chat with some one....</div>
+      <div className="contact-header-title">select some one to chat</div>
     </div>
   );
 };
