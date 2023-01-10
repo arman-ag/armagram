@@ -12,7 +12,7 @@ const message = (state = storedData, action) => {
   switch (action.type) {
     case 'user_message':
       // eslint-disable-next-line no-case-declarations
-      const receiveOrNot = state[action.phone]?.message.length % 2 == 1;
+      const receiveOrNot = state[action.phone]?.message.length % 2 === 1;
       return saveLocalStorage(receiveOrNot, {
         ...state,
         [action.phone]: {

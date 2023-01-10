@@ -1,12 +1,12 @@
 import { sendService } from 'services';
 
-const userMessage = (userMessage, phone) => {
+const userMessage = (userMessage, phone, id) => {
   return async (dispatch) => {
     dispatch(sendMessage(userMessage, phone, false));
     try {
       const {
         data: { message }
-      } = await sendService.getMessage(userMessage);
+      } = await sendService.getMessage(userMessage, id);
       dispatch(sendMessage(message, phone, true));
     } catch (err) {
       dispatch(sendMessageFail(err.message + ' please use proxy to use app'));

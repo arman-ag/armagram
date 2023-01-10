@@ -12,14 +12,14 @@ const ChatSection = () => {
   const display: string = useSelector((state: any) => state.replyStatus.display);
   const messages = useSelector((state: any) => state.message);
   const profile = useSelector((state: any) => state.singleProfile.profile);
-  const { phone } = profile;
+  const { phone, id } = profile;
 
   //prepare text to send
   const send = (e: React.ChangeEvent) => {
     e.preventDefault();
     if (text?.length > 0 && messages.sendPermission) {
       setText('');
-      dispatch(messageAction.userMessage(text, phone));
+      dispatch(messageAction.userMessage(text, phone, id));
     }
     return messages.sendPermission;
   };

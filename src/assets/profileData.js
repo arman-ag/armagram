@@ -5,7 +5,7 @@ export const profileData = [
     bio: 'singer & dancer . in relationship',
     user: '87_shakira',
     profileImage: '/images/shakira.jpg',
-    id: 1
+    id: 45977698
   },
   {
     name: 'Joe Biden',
@@ -13,6 +13,6 @@ export const profileData = [
     bio: 'the president of USA ',
     user: 'joe_biden',
     profileImage: '/images/biden.jpg',
-    id: 2
+    id: 45977797
   }
 ];
