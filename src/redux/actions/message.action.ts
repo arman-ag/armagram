@@ -19,7 +19,6 @@ const sendMessage = (message, phone, Permission) => {
     type: 'user_message',
     phone,
     userMessage: { message, time },
-    date: time,
     Permission
   };
 };

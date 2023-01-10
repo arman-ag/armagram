@@ -3,8 +3,7 @@
 @import './../../sassStyles/global';
 .menu {
   left: 0;
-  max-width: 410px;
-  // height:100vh;
+  max-width: 18rem;
   border-right: 1px solid $gray-2;
   background-color: $white-1;
   &-header {
@@ -13,6 +12,7 @@
   }
 }
 .menu-item {
+  padding-right: 1rem;
   cursor: pointer;
   display: flex;
   height: 72px;
@@ -24,35 +24,39 @@
     margin: 0 15px;
   }
   .profile-info {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-
-    h3 {
-      margin: 0;
+    flex-grow: 2;
+    &-identity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
   .last-message {
     display: flex;
 
     &-text {
+      max-width: 9rem;
       color: $gray-3;
       overflow: hidden;
       text-overflow: ellipsis;
-      width: 100px;
       display: inline-block;
       white-space: nowrap;
     }
-    &-count {
-      border-radius: 100%;
-      color: white;
-      background-color: $gray-2;
-      padding: 4px;
+    &-time {
+      color: $gray-3;
+      font-size: xx-small;
       font-weight: bold;
     }
+    // &-count {
+    //   border-radius: 100%;
+    //   color: white;
+    //   background-color: $gray-2;
+    //   padding: 4px;
+    //   font-weight: bold;
+    // }
   }
 }
+
 .search-box {
   background-color: $white-1;
   width: 60%;

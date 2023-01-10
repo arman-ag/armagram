@@ -1,31 +1,34 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import moment from 'moment';
+import { useDispatch, useSelector } from 'react-redux';
 import { singleProfileAction } from '../../redux/actions';
 import './menuStyle.scss';
 import { menuItemProps } from './types';
 
 const MenuItem = ({ profileData }: menuItemProps) => {
   const dispatch = useDispatch();
-  // const messages = useSelector((state: any) => state.message.message);
-  // const state = useSelector((state: any) => state);
+  const { phone } = profileData;
+  const messages = useSelector((state: any) => state.message);
 
-  const phone: string = profileData.phone;
-
-  useEffect(() => {
-    // dispatch(messageAction.getMessage(phone, false));
-  }, [dispatch, phone]);
-
+  const lastMessage = (messages) => {
+    const messageList = messages[phone]?.message;
+    return messageList && messageList[messageList?.length - 1];
+  };
+  const formatTime = (time) => {
+    return time && moment(time).format('hh:mm A');
+  };
   const receiveMessage = () => {
     dispatch(singleProfileAction.getSingleProfile(phone));
   };
-
   return (
     <div className="menu-item" onClick={receiveMessage}>
       <img src={profileData.profileImage} alt="profile " className="profile" />
       <div className="profile-info">
-        <h3>{profileData?.name}</h3>
+        <div className="profile-info-identity">
+          <span>{profileData?.name}</span>
+          <span className="last-message-time">{formatTime(lastMessage(messages)?.time)} </span>
+        </div>
         <div className="last-message">
-          {/* <span className="last-message-text">{messages[messages.length - 1]?.message} </span> */}
+          <div className="last-message-text">{lastMessage(messages)?.message}</div>
         </div>
       </div>
     </div>
