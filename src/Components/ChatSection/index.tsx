@@ -9,7 +9,7 @@ const ChatSection = () => {
   const [text, setText] = useState('');
   const dispatch = useDispatch();
 
-  const display: string = useSelector((state: any) => state.replyStatus.display);
+  // const display: string = useSelector((state: any) => state.replyStatus.display);
   const messages = useSelector((state: any) => state.message);
   const profile = useSelector((state: any) => state.singleProfile.profile);
   const { phone, id } = profile;
