@@ -38,7 +38,13 @@ const InputSection = ({ setText, text, send }: allMessageType) => {
           <button>
             <BsEmojiSmile color="#A8ABAD" size="25px" />
           </button>
-          <input value={text} placeholder="Message" type="text" onChange={textEntry} />
+          <input
+            autoFocus={true}
+            value={text}
+            placeholder="Message"
+            type="text"
+            onChange={textEntry}
+          />
           <button>
             <AiOutlinePaperClip color="#A8ABAD" size="25px" />
           </button>

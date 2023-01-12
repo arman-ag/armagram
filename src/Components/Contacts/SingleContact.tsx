@@ -1,13 +1,19 @@
 import { menuItemProps } from 'Components/Menu/types';
 import { useDispatch, useSelector } from 'react-redux';
-import { modalAction, selectedProfile } from 'redux/actions';
+import {
+  menuPositionAction,
+  modalAction,
+  selectedProfile,
+  singleProfileAction
+} from 'redux/actions';
 import './contactStyle.scss';
 
 const SingleContact = ({ profileData }: menuItemProps) => {
   const dispatch = useDispatch();
   const contacts = useSelector((state: any) => state.selectedProfile);
-
   const choseUser = (profileData) => {
+    dispatch(singleProfileAction.getSingleProfile(profileData?.phone));
+    dispatch(menuPositionAction.position(false));
     if (!contacts.includes(profileData)) {
       dispatch(selectedProfile.chosesProfile('addContact', profileData));
     }

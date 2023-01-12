@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
-import { singleProfileAction } from '../../redux/actions';
+import { menuPositionAction, singleProfileAction } from '../../redux/actions';
 import './menuStyle.scss';
 import { menuItemProps } from './types';
 
@@ -18,6 +18,7 @@ const MenuItem = ({ profileData }: menuItemProps) => {
   };
   const receiveMessage = () => {
     dispatch(singleProfileAction.getSingleProfile(phone));
+    dispatch(menuPositionAction.position(false));
   };
   return (
     <div className="menu-item" onClick={receiveMessage}>

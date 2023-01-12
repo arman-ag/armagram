@@ -2,6 +2,7 @@
 @import './../../sassStyles/typography';
 @import './../../sassStyles/global';
 .menu {
+  min-width: 15rem;
   left: 0;
   border-right: 1px solid $gray-2;
   background-color: $white-1;
@@ -46,13 +47,6 @@
       font-size: xx-small;
       font-weight: bold;
     }
-    // &-count {
-    //   border-radius: 100%;
-    //   color: white;
-    //   background-color: $gray-2;
-    //   padding: 4px;
-    //   font-weight: bold;
-    // }
   }
 }
 

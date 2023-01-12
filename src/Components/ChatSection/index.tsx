@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { messageAction } from 'redux/actions';
 import InputSection from './InputSection';
@@ -8,8 +8,7 @@ import MessageSend from './MessageSend';
 const ChatSection = () => {
   const [text, setText] = useState('');
   const dispatch = useDispatch();
-
-  // const display: string = useSelector((state: any) => state.replyStatus.display);
+  const messagesEndRef = useRef(null);
   const messages = useSelector((state: any) => state.message);
   const profile = useSelector((state: any) => state.singleProfile.profile);
   const { phone, id } = profile;
@@ -24,6 +23,7 @@ const ChatSection = () => {
     return messages.sendPermission;
   };
   const choseType = (item, index) => {
+    messagesEndRef.current?.scrollIntoView({ block: 'end', behavior: 'smooth' });
     if (index % 2 == 0) {
       return <MessageSend time={item.time} text={item.message} key={index} />;
     } else {
@@ -32,6 +32,7 @@ const ChatSection = () => {
   };
   return (
     <div
+      ref={messagesEndRef}
       style={Object.keys(profile).length ? { display: 'flex' } : { display: 'none' }}
       className="chat-section">
       <div className="chat-section-message">

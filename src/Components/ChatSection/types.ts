@@ -14,7 +14,3 @@ export interface allMessageType {
   text: string;
   send: (e: React.FormEvent) => void;
 }
-
-export interface messageReplyProps {
-  text: { type: string; message: string; replyMessage?: string };
-}

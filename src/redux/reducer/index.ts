@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import menuPosition from './menuPosition.reducer';
 import message from './message.reducer';
 import modal from './modal.reducer';
 import profile from './profile.reducer';
@@ -11,6 +12,7 @@ const allReducer = combineReducers({
   modal,
   singleProfile,
   replyStatus,
-  selectedProfile
+  selectedProfile,
+  menuPosition
 });
 export default allReducer;

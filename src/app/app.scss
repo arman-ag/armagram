@@ -19,3 +19,14 @@
     'menu . chat .  ' auto/
     1.25fr 0.75fr 3fr 1fr;
 }
+@media (max-width: 500px) {
+  .menu {
+    height: 100%;
+  }
+  .container {
+    display: block;
+  }
+  .chat-section {
+    padding: 0 1rem;
+  }
+}
