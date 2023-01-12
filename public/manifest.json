@@ -1,6 +1,6 @@
 {
   "short_name": "Armangeram",
-  "name": "chat application",
+  // "name": "chat application",
   "icons": [
     {
       "src": "favicon.ico",
