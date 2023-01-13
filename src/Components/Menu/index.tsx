@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import useScreenSize from 'hooks/useScreenSize';
+import { useEffect } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { modalAction, profileAction } from '../../redux/actions';
@@ -6,24 +7,13 @@ import MenuItem from './MenuItem';
 import './menuStyle.scss';
 
 const Menu = () => {
-  const [width, setWindowWidth] = useState(0);
   const dispatch = useDispatch();
-
+  const [width] = useScreenSize();
   const contacts: any = useSelector((state: any) => state.selectedProfile);
   const openMenu: any = useSelector((state: any) => state.menuPosition.openMenu);
-  const updateDimensions = () => {
-    const width = window.innerWidth;
-    setWindowWidth(width);
-  };
-
   useEffect(() => {
     dispatch(profileAction.getAllProfile());
   }, [dispatch]);
-  useEffect(() => {
-    updateDimensions();
-    window.addEventListener('resize', updateDimensions);
-    return () => window.removeEventListener('resize', updateDimensions);
-  }, []);
 
   const responsive = () => {
     if (width > 500) {

@@ -7,7 +7,7 @@ const MessageReceive = ({ text, time }: messageText) => {
   };
   return (
     <div className="message message-receive">
-      <div className="reply-container">{text}</div>
+      {text}
       <div style={{ display: 'flex', justifyContent: 'end' }} className="time-section">
         {formatTime(time)}
       </div>

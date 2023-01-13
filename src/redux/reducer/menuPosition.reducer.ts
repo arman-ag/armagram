@@ -4,7 +4,7 @@ const initial = {
 const menuPosition = (state = initial, action) => {
   switch (action.type) {
     case 'menu_status':
-      return { openMenu: action.position };
+      return { openMenu: action.status };
     default:
       return state;
   }

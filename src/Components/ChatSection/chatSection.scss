@@ -35,7 +35,6 @@
   margin-top: 10px;
   &-send {
     align-self: flex-end;
-
     background-color: $green-1;
     .angle {
       position: absolute;
@@ -47,6 +46,7 @@
     }
   }
   &-receive {
+    align-self: flex-start;
     background-color: $white-1;
     .angle {
       position: absolute;
@@ -136,7 +136,6 @@
     height: 50px;
     button {
       @extend%btn;
-
       &:hover {
         background-color: rgba(255, 255, 255, 0);
       }
@@ -186,4 +185,9 @@
 }
 .reply-receive {
   margin-left: 10px;
+}
+@media (max-width: 500px) {
+  .message {
+    max-width: 10rem;
+  }
 }

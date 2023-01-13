@@ -23,8 +23,12 @@
   .menu {
     height: 100%;
   }
+  .chat-section {
+    height: 100vh;
+  }
   .container {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
   .chat-section {
     padding: 0 1rem;
