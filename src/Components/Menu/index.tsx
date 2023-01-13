@@ -1,6 +1,7 @@
 import useScreenSize from 'hooks/useScreenSize';
 import { useEffect } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { BiPlus } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { modalAction, profileAction } from '../../redux/actions';
 import MenuItem from './MenuItem';
@@ -26,21 +27,29 @@ const Menu = () => {
   };
   return (
     <div style={responsive()} className="menu">
-      <div className="menu-header">
-        <div className="search-box">
-          <button>
-            <AiOutlineSearch color="#A8ABAD" size="25px" />
-          </button>
-          <input placeholder="Search..." type="text" />
+      <div style={{ position: 'sticky', top: 0 }}>
+        <div className="menu-header">
+          <span className="menu-header-app-name">Armageram</span>
+          <div className="search-box">
+            <input type="text" />
+            <button>
+              <AiOutlineSearch color="#A8ABAD" size="25px" />
+            </button>
+          </div>
         </div>
-        <button className="contact-list" onClick={() => dispatch(modalAction.open('contact'))}>
-          {' '}
-          contact list{' '}
+        <div>
+          {contacts?.map((item) => (
+            <MenuItem profileData={item} key={item.id} />
+          ))}
+        </div>
+      </div>
+      <div className="menu-add-contact">
+        <button
+          className="menu-add-contact-button"
+          onClick={() => dispatch(modalAction.open('contact'))}>
+          <BiPlus size="2.1rem" color="white" />
         </button>
       </div>
-      {contacts?.map((item: any, index: number) => (
-        <MenuItem profileData={item} key={item.id} />
-      ))}
     </div>
   );
 };
