@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { messageAction } from 'redux/actions';
 import InputSection from './InputSection';
@@ -13,6 +13,15 @@ const ChatSection = () => {
   const profile = useSelector((state: any) => state.singleProfile.profile);
   const { phone, id } = profile;
 
+  useEffect(() => {
+    if (messagesEndRef) {
+      console.log('sa');
+      messagesEndRef?.current?.addEventListener('DOMNodeInserted', (event) => {
+        const { currentTarget: target } = event;
+        messagesEndRef?.current?.scroll({ top: target.scrollHeight, behavior: 'smooth' });
+      });
+    }
+  }, []);
   //prepare text to send
   const send = (e: React.ChangeEvent) => {
     e.preventDefault();
@@ -23,7 +32,7 @@ const ChatSection = () => {
     return messages.sendPermission;
   };
   const choseType = (item, index) => {
-    messagesEndRef.current?.lastElementChild?.scrollIntoView();
+    // messagesEndRef.current?.lastElementChild?.scrollIntoView({ behavior: 'smooth' })
     if (index % 2 == 0) {
       return <MessageSend time={item.time} text={item.message} key={index} />;
     } else {
@@ -34,8 +43,8 @@ const ChatSection = () => {
   return (
     <>
       {Object.keys(profile).length > 0 && (
-        <div className="chat-section" ref={messagesEndRef}>
-          <div className="chat-section-message">
+        <div className="chat-section">
+          <div className="chat-section-message" ref={messagesEndRef}>
             {messages?.[phone]?.message?.map((item, index) => choseType(item, index))}
           </div>
           <InputSection setText={setText} text={text} send={send} profile={profile} />
