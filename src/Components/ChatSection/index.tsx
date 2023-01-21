@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { messageAction } from 'redux/actions';
 import InputSection from './InputSection';
@@ -30,25 +30,18 @@ const ChatSection = () => {
       return <MessageReceive time={item.time} text={item.message} key={index} />;
     }
   };
-  useEffect(() => {
-    if (Object.keys(profile).length) {
-      console.log('mount');
-      return () => {
-        console.log('unmount');
-      };
-    }
-  }, [profile]);
 
   return (
-    <div
-      // style={Object.keys(profile).length ? { display: 'flex' } : { display: 'none' }}
-      className="chat-section"
-      ref={messagesEndRef}>
-      <div className="chat-section-message">
-        {messages?.[phone]?.message?.map((item, index) => choseType(item, index))}
-      </div>
-      <InputSection setText={setText} text={text} send={send} />
-    </div>
+    <>
+      {Object.keys(profile).length > 0 && (
+        <div className="chat-section" ref={messagesEndRef}>
+          <div className="chat-section-message">
+            {messages?.[phone]?.message?.map((item, index) => choseType(item, index))}
+          </div>
+          <InputSection setText={setText} text={text} send={send} profile={profile} />
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { AiOutlinePaperClip } from 'react-icons/ai';
 import { BsEmojiSmile } from 'react-icons/bs';
 import { IoMdSend } from 'react-icons/io';
@@ -5,7 +6,11 @@ import { useSelector } from 'react-redux';
 import './chatSection.scss';
 import { allMessageType } from './types';
 
-const InputSection = ({ setText, text, send }: allMessageType) => {
+const InputSection = ({ setText, text, send, profile }: allMessageType) => {
+  const inputReference = useRef(null);
+  useEffect(() => {
+    inputReference.current.focus();
+  }, [profile]);
   const permission = useSelector((state: any) => state.message.sendPermission);
   const textEntry = (e) => {
     setText(e.target.value);
@@ -18,7 +23,13 @@ const InputSection = ({ setText, text, send }: allMessageType) => {
           <button>
             <BsEmojiSmile color="#A8ABAD" size="25px" />
           </button>
-          <input value={text} placeholder="Message" type="text" onChange={textEntry} />
+          <input
+            value={text}
+            placeholder="Message"
+            type="text"
+            onChange={textEntry}
+            ref={inputReference}
+          />
           <button>
             <AiOutlinePaperClip color="#A8ABAD" size="25px" />
           </button>
