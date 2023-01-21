@@ -32,7 +32,8 @@
   border-radius: 8px;
   position: relative;
   max-width: 20rem;
-  margin-top: 10px;
+  margin: 0.75rem 0;
+
   &-send {
     align-self: flex-end;
     background-color: $green-1;
@@ -71,8 +72,8 @@
 }
 .send-box {
   position: sticky;
-  bottom: 0.5rem;
-  margin-top: 2rem;
+  bottom: 0.75rem;
+  margin: 0.75rem 0;
   display: flex;
   width: 100%;
   &-input {

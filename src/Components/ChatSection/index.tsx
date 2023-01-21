@@ -23,7 +23,7 @@ const ChatSection = () => {
     return messages.sendPermission;
   };
   const choseType = (item, index) => {
-    messagesEndRef.current?.scrollIntoView({ block: 'end', behavior: 'smooth' });
+    messagesEndRef.current?.lastElementChild?.scrollIntoView();
     if (index % 2 == 0) {
       return <MessageSend time={item.time} text={item.message} key={index} />;
     } else {
@@ -41,9 +41,9 @@ const ChatSection = () => {
 
   return (
     <div
-      ref={messagesEndRef}
       // style={Object.keys(profile).length ? { display: 'flex' } : { display: 'none' }}
-      className="chat-section">
+      className="chat-section"
+      ref={messagesEndRef}>
       <div className="chat-section-message">
         {messages?.[phone]?.message?.map((item, index) => choseType(item, index))}
       </div>
