@@ -12,6 +12,8 @@ import './app.scss';
 const App: React.FC = () => {
   const messageContainer = useRef(null);
   const status = useSelector((state: any) => state.modal.status);
+  const messages = useSelector((state: any) => state.message);
+
   const err = useSelector((state: any) => state.message);
   err?.openModal &&
     Swal.fire({
@@ -29,7 +31,7 @@ const App: React.FC = () => {
       top: messageContainer.current.scrollHeight,
       behavior: 'smooth'
     });
-  });
+  }, [messages]);
   return (
     <div className="container" ref={messageContainer}>
       <Header />

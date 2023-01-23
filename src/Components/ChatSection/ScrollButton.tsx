@@ -20,7 +20,7 @@ const ScrollButton = () => {
     const scrollToBottom = () => {
         window.scrollTo({
             top: document.documentElement.scrollHeight,
-            behavior: 'auto'
+            behavior: 'smooth'
             /* you can also use 'auto' behaviour 
                in place of 'smooth' */
         });

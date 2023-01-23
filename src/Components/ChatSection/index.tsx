@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { messageAction } from 'redux/actions';
