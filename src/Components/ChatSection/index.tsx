@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { messageAction } from 'redux/actions';
 import InputSection from './InputSection';
@@ -13,15 +13,21 @@ const ChatSection = () => {
   const profile = useSelector((state: any) => state.singleProfile.profile);
   const { phone, id } = profile;
 
-  useEffect(() => {
-    if (messagesEndRef) {
-      console.log('sa');
-      messagesEndRef?.current?.addEventListener('DOMNodeInserted', (event) => {
-        const { currentTarget: target } = event;
-        messagesEndRef?.current?.scroll({ top: target.scrollHeight, behavior: 'smooth' });
-      });
+  useLayoutEffect(() => {
+    if (messagesEndRef.current === null) {
+      return;
     }
+    messagesEndRef.current.style.paddingBottom = '4.2rem';
+  }, [messages]);
+
+  useEffect(() => {
+    console.log('a');
+    if (messagesEndRef.current === null) {
+      return;
+    }
+    messagesEndRef.current.style.paddingBottom = '0';
   }, []);
+
   //prepare text to send
   const send = (e: React.ChangeEvent) => {
     e.preventDefault();
@@ -32,14 +38,14 @@ const ChatSection = () => {
     return messages.sendPermission;
   };
   const choseType = (item, index) => {
-    // messagesEndRef.current?.lastElementChild?.scrollIntoView({ behavior: 'smooth' })
+    messagesEndRef.current?.lastElementChild?.scrollIntoView({ behavior: 'smooth' });
+
     if (index % 2 == 0) {
       return <MessageSend time={item.time} text={item.message} key={index} />;
     } else {
       return <MessageReceive time={item.time} text={item.message} key={index} />;
     }
   };
-
   return (
     <>
       {Object.keys(profile).length > 0 && (

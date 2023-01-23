@@ -2,7 +2,7 @@ export const profileData = [
   {
     name: 'Shakira',
     phone: '+5432789512',
-    bio: 'singer & dancer . in relationship',
+    bio: 'singer & dancer.in relationship',
     user: '87_shakira',
     profileImage: '/images/shakira.jpg',
     id: 45977698
@@ -12,7 +12,7 @@ export const profileData = [
     phone: '+2132789512',
     bio: 'the president of USA ',
     user: 'joe_biden',
-    profileImage: '/images/biden.jpg',
+    profileImage: '/images/biden2.jpg',
     id: 45977797
   }
 ];

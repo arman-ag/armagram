@@ -18,6 +18,7 @@ const App: React.FC = () => {
       icon: 'error',
       confirmButtonText: 'ok'
     }).then((res) => res?.value && window.location.reload());
+
   return (
     <div className="container">
       <Header />

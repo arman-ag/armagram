@@ -84,46 +84,6 @@
     flex-direction: column;
     background-color: $white-1;
     border-radius: 12px;
-    .reply-box {
-      padding-top: 5px;
-      position: relative;
-      width: 100%;
-      height: 51px;
-      display: flex;
-      justify-content: space-between;
-      &-horizontal {
-        margin-right: 10px;
-        height: 32px;
-        width: 2px;
-        background-color: $blue-1;
-      }
-      &-figure {
-        display: flex;
-        align-items: center;
-      }
-      &-text {
-        display: flex;
-        height: 100%;
-        width: 80%;
-        flex-direction: column;
-        justify-content: space-between;
-        flex-grow: 2;
-        &-message {
-          align-self: flex-end;
-          color: $gray-3;
-        }
-        &-number {
-          color: $blue-1;
-          flex-grow: 1;
-          text-align: start;
-        }
-        .container-text {
-          align-self: flex-end;
-          display: flex;
-          flex-direction: column;
-        }
-      }
-    }
   }
   &-button {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(153, 148, 148, 0.19);

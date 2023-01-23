@@ -11,17 +11,18 @@ import './contactStyle.scss';
 const SingleContact = ({ profileData }: menuItemProps) => {
   const dispatch = useDispatch();
   const contacts = useSelector((state: any) => state.selectedProfile);
-  const choseUser = (profileData) => {
+
+  const choseUser = () => {
     dispatch(singleProfileAction.getSingleProfile(profileData?.phone));
     dispatch(menuPositionAction.position(false));
-    if (!contacts.includes(profileData)) {
+    if (!contacts.find(({ id }) => id === profileData.id)) {
       dispatch(selectedProfile.chosesProfile('addContact', profileData));
     }
     dispatch(modalAction.close());
   };
 
   return (
-    <div className="single-contact" onClick={() => choseUser(profileData)}>
+    <div className="single-contact" onClick={choseUser}>
       <img src={profileData.profileImage} alt="profile " className="profile" />
       <div className="profile-info">
         <h3>{profileData?.name}</h3>
