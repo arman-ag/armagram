@@ -1,6 +1,8 @@
 @import '../../sassStyles/variables';
 @import './../../sassStyles/global';
-
+$dot-width: 0.3rem;
+$dot-color: rgb(0, 66, 0);
+$speed: 1.5s;
 .header {
   background-color: $white-1;
   position: sticky;
@@ -16,6 +18,9 @@
   height: 41px;
   border-radius: 100%;
   margin: 0 15px;
+  &-status {
+    color: $blue-1 !important;
+  }
 }
 .header-profile {
   cursor: pointer;
@@ -33,5 +38,52 @@
   }
   span {
     color: $gray-3;
+  }
+}
+.typing-box {
+  display: flex;
+  color: rgb(0, 66, 0);
+  margin-top: 0.1rem;
+  // align-items: center;
+}
+
+.typing {
+  position: relative;
+
+  span {
+    content: '';
+    animation: blink $speed infinite;
+    animation-fill-mode: both;
+    height: $dot-width;
+    width: $dot-width;
+    background: $dot-color;
+    position: absolute;
+    left: 3rem;
+    top: 0.65rem;
+    border-radius: 50%;
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+      margin-left: $dot-width * 1.5;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+      margin-left: $dot-width * 3;
+    }
+  }
+}
+.typing-text {
+  color: $dot-color !important;
+}
+@keyframes blink {
+  0% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
   }
 }
