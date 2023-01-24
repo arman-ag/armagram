@@ -16,14 +16,13 @@ const App: React.FC = () => {
   const err = useSelector((state: any) => state.message);
   const messages = useSelector((state: any) => state.message);
 
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
     const scrolled = messageContainer.current.scrollTop;
-    const scrollHeight = messageContainer.current.scrollHeight;
     if (scrolled > 0) {
       setVisible(false);
-    } else if (scrolled <= 0 && scrollHeight >= 858) {
+    } else if (scrolled <= 0) {
       setVisible(true);
     }
   };
@@ -52,13 +51,18 @@ const App: React.FC = () => {
     if (messageContainer.current == null) {
       return;
     }
+    // const Height = messageContainer.current.offsetHeight;
+    // console.log(Height);
+    // if (Height < 858) {
+    //   setVisible(false);
+    // }
     messageContainer.current.addEventListener('scroll', toggleVisible);
   });
   return (
     <div className="container" ref={messageContainer}>
       <Header />
       <Menu />
-      <ChatSection>
+      <ChatSection setVisible={setVisible}>
         <button
           onClick={scrollToBottom}
           style={{ display: visible ? 'inline' : 'none' }}
