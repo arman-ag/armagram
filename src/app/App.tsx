@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import 'sweetalert2/src/sweetalert2.scss';
@@ -12,9 +13,27 @@ import './app.scss';
 const App: React.FC = () => {
   const messageContainer = useRef(null);
   const status = useSelector((state: any) => state.modal.status);
+  const err = useSelector((state: any) => state.message);
   const messages = useSelector((state: any) => state.message);
 
-  const err = useSelector((state: any) => state.message);
+  const [visible, setVisible] = useState(true);
+
+  const toggleVisible = () => {
+    const scrolled = messageContainer.current.scrollTop;
+    const scrollHeight = messageContainer.current.scrollHeight;
+    if (scrolled > 0) {
+      setVisible(false);
+    } else if (scrolled <= 0 && scrollHeight >= 858) {
+      setVisible(true);
+    }
+  };
+
+  const scrollToBottom = () => {
+    messageContainer.current?.scrollTo({
+      top: messageContainer.current.scrollHeight,
+      behavior: 'smooth'
+    });
+  };
   err?.openModal &&
     Swal.fire({
       title: 'Error!',
@@ -27,16 +46,26 @@ const App: React.FC = () => {
     if (messageContainer.current == null) {
       return;
     }
-    messageContainer.current?.scrollTo({
-      top: messageContainer.current.scrollHeight,
-      behavior: 'smooth'
-    });
+    scrollToBottom();
   }, [messages]);
+  useEffect(() => {
+    if (messageContainer.current == null) {
+      return;
+    }
+    messageContainer.current.addEventListener('scroll', toggleVisible);
+  });
   return (
     <div className="container" ref={messageContainer}>
       <Header />
       <Menu />
-      <ChatSection />
+      <ChatSection>
+        <button
+          onClick={scrollToBottom}
+          style={{ display: visible ? 'inline' : 'none' }}
+          className="scroll-button">
+          <IoIosArrowDown size="25" />
+        </button>
+      </ChatSection>
       {status?.open &&
         (status?.element === 'profileMenu' ? (
           <Modal>

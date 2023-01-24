@@ -5,13 +5,12 @@ import InputSection from './InputSection';
 import MessageReceive from './MessageReceive';
 import MessageSend from './MessageSend';
 
-const ChatSection = () => {
+const ChatSection = ({ children }) => {
   const [text, setText] = useState('');
   const dispatch = useDispatch();
   const messages = useSelector((state: any) => state.message);
   const profile = useSelector((state: any) => state.singleProfile.profile);
   const { phone, id } = profile;
-
   //prepare text to send
   const send = (e: React.ChangeEvent) => {
     e.preventDefault();
@@ -34,6 +33,7 @@ const ChatSection = () => {
         <div className="chat-section">
           <div className="chat-section-message">
             {messages?.[phone]?.message?.map((item, index) => choseType(item, index))}
+            {children}
           </div>
           <InputSection setText={setText} text={text} send={send} profile={profile} />
         </div>

@@ -29,7 +29,7 @@ const Menu = () => {
     <div style={responsive()} className="menu">
       <div style={{ position: 'sticky', top: 0 }}>
         <div className="menu-header">
-          <span className="menu-header-app-name">Armagram</span>
+          <img src="/images/Armagram.png" />
           <div className="search-box">
             <input type="text" />
             <button>

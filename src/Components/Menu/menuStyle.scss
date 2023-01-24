@@ -99,13 +99,15 @@
 }
 .menu-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   height: 4rem;
   padding: 0 0.75rem;
-  &-app-name {
-    font-size: larger;
-    font-weight: 600;
+  img {
+    width: 10rem;
+    position: absolute;
+    left: 1rem;
+    top: -2.8rem;
   }
   .contact-list {
     @extend%btn;

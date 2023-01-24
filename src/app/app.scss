@@ -1,3 +1,6 @@
+@import './../sassStyles/variables';
+@import './../sassStyles/typography';
+@import './../sassStyles/global';
 .header {
   grid-area: header;
 }
@@ -19,7 +22,32 @@
     'menu . chat .  ' auto/
     1.25fr 0.75fr 3fr 1fr;
 }
+.scroll-button {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(153, 148, 148, 0.19);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: $white-1;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  width: 3.1rem;
+  height: 3.1rem;
+  position: fixed;
+  bottom: 15%;
+  right: 18%;
+  button {
+    @extend%btn;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0);
+    }
+  }
+}
+
 @media (max-width: 500px) {
+  .scroll-button {
+    right: 6%;
+  }
   .menu {
     height: 100%;
   }
