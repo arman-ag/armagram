@@ -8,13 +8,4 @@
   cursor: pointer;
   outline: inherit;
   border-radius: 100%;
-  &:hover {
-    background-color: $gray-1;
-  }
-  &:active {
-    background-color: $gray-1;
-  }
-  &:focus {
-    background-color: $gray-1;
-  }
 }

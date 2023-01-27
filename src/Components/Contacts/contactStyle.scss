@@ -3,9 +3,9 @@
 @import './../../sassStyles/typography';
 
 .contact-menu {
-  width: 350px;
+  width: 22rem;
   overflow: auto;
-  height: 500px;
+  height: 30rem;
   border-radius: 5px;
 }
 .contact-header {
@@ -14,18 +14,19 @@
   position: sticky;
   top: 0;
   z-index: 5;
-  border-bottom: 1px black solid;
+  border-bottom: 0.12rem $gray-2 solid;
   align-items: center;
-  height: 56px;
+  height: 4rem;
   display: flex;
+  justify-content: space-between;
   button {
     @extend%btn;
   }
   &-title {
+    margin-left: 1rem;
     font-size: $large-font;
     font-weight: 500;
     text-align: center;
-    flex-grow: 2;
   }
 }
 .single-contact {
@@ -42,7 +43,7 @@
     width: 55px;
     height: 54px;
     border-radius: 100%;
-    margin: 0 15px;
+    margin-left: 1rem;
   }
   .profile-info {
     display: flex;

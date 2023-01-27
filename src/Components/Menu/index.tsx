@@ -31,13 +31,12 @@ const Menu = () => {
         <div className="menu-header">
           <img src="/images/Armagram.png" />
           <div className="search-box">
-            <input type="text" />
             <button>
               <AiOutlineSearch color="#A8ABAD" size="25px" />
             </button>
           </div>
         </div>
-        <div>
+        <div className="menu-container">
           {contacts?.map((item) => (
             <MenuItem profileData={item} key={item.id} />
           ))}

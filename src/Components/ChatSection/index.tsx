@@ -5,7 +5,7 @@ import InputSection from './InputSection';
 import MessageReceive from './MessageReceive';
 import MessageSend from './MessageSend';
 
-const ChatSection = ({ children, setVisible }) => {
+const ChatSection = ({ children }) => {
   const [show, SetShow] = useState(false);
   const [text, setText] = useState('');
   const dispatch = useDispatch();

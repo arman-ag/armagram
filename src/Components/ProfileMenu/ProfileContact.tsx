@@ -1,5 +1,4 @@
-import React from 'react';
-import { AiOutlineInfoCircle } from 'react-icons/ai';
+import { ImInfo } from 'react-icons/im';
 import { MdOutlineAlternateEmail, MdOutlinePhone } from 'react-icons/md';
 import { propProfileTypes } from './profileMenuTypes';
 const ProfileContact = ({ profile }: propProfileTypes) => {
@@ -20,7 +19,7 @@ const ProfileContact = ({ profile }: propProfileTypes) => {
         </div>
       </div>
       <div className="ProfileContact-main">
-        <AiOutlineInfoCircle size={28} />
+        <ImInfo size={28} />
         <div className="ProfileContact-box">
           <span className="ProfileContact-text">{profile.bio}</span>
           <span className="ProfileContact-caption">Bio</span>

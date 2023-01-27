@@ -51,18 +51,13 @@ const App: React.FC = () => {
     if (messageContainer.current == null) {
       return;
     }
-    // const Height = messageContainer.current.offsetHeight;
-    // console.log(Height);
-    // if (Height < 858) {
-    //   setVisible(false);
-    // }
     messageContainer.current.addEventListener('scroll', toggleVisible);
   });
   return (
     <div className="container" ref={messageContainer}>
       <Header />
       <Menu />
-      <ChatSection setVisible={setVisible}>
+      <ChatSection>
         <button
           onClick={scrollToBottom}
           style={{ display: visible ? 'inline' : 'none' }}
