@@ -9,7 +9,7 @@ const userMessage = (userMessage, phone, id) => {
       } = await sendService.getMessage(userMessage, id);
       dispatch(sendMessage(message, phone, true));
     } catch (err) {
-      dispatch(sendMessageFail(err.message + ' please use proxy to use app'));
+      dispatch(sendMessageFail(err.message + ' please use vpn'));
     }
   };
 };
