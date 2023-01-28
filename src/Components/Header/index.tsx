@@ -1,16 +1,19 @@
 import useScreenSize from 'hooks/useScreenSize';
+import { useRef } from 'react';
 import { MdArrowBack } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { menuPositionAction } from 'redux/actions';
 import './headerStyle.scss';
 import ProfileInfo from './ProfileInfo';
 const Header = () => {
+  const header = useRef(null);
   const [width] = useScreenSize();
   const dispatch = useDispatch();
   const mountedProfile = useSelector((state: any) => state.singleProfile.profile);
 
   return (
     <div
+      ref={header}
       style={{ display: Object.keys(mountedProfile).length ? 'flex' : 'none' }}
       className="header">
       <button
