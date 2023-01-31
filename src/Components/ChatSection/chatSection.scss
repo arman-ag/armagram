@@ -25,7 +25,6 @@
   }
 }
 .message {
-  text-align: justify;
   word-wrap: break-word;
   background-color: $white-1;
   padding: 10px;
@@ -86,10 +85,11 @@
     border-radius: 12px;
   }
   &-button {
+    padding-left: 0.15rem;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(153, 148, 148, 0.19);
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: end;
     margin-left: 0.6rem;
     background-color: $white-1;
     border-radius: 50px;
@@ -97,6 +97,7 @@
     height: 3.1rem;
     button {
       @extend%btn;
+
       &:hover {
         background-color: rgba(255, 255, 255, 0);
       }

@@ -6,7 +6,7 @@
   width: 22rem;
   border-radius: 5px;
   overflow: auto;
-  height: 30rem;
+  max-height: 32.5rem;
 }
 .profile-header {
   overflow: hidden;
@@ -31,7 +31,7 @@
   }
   button {
     @extend%btn;
-    margin-right: 0.9rem;
+    margin-right: 1.3rem;
   }
   &-title {
     font-size: $large-font;
@@ -47,20 +47,22 @@
   &-box {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
+    margin-left: 0.7rem;
     align-items: flex-start;
   }
   &-text {
-    font-size: $large-font;
-    text-align: justify;
+    font-size: $medium-font;
   }
   &-caption {
+    margin-top: 0.01rem;
     color: $gray-3;
+    font-size: $small-font;
   }
 }
 .profileImage {
   img {
     width: 100%;
+    height: 15rem;
   }
   position: relative;
   &-caption {

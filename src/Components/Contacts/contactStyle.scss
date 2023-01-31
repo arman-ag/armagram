@@ -21,6 +21,7 @@
   justify-content: space-between;
   button {
     @extend%btn;
+    margin-right: 0.3rem;
   }
   &-title {
     margin-left: 1rem;
@@ -34,7 +35,7 @@
   display: flex;
   height: 72px;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 0.4rem;
   &:hover {
     background-color: $gray-2;
   }

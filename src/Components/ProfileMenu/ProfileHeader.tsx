@@ -6,7 +6,7 @@ const ProfileHeader = () => {
   return (
     <div className="profile-header">
       <div className="profile-header-close">
-        <span className="profile-header-title">Profile</span>
+        <span className="profile-header-title">profile</span>
         <button onClick={() => dispatch(modalAction.close())}>
           <RiCloseLine size="25" color=" #2c3e50" />
         </button>

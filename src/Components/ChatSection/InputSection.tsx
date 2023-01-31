@@ -37,7 +37,7 @@ const InputSection = ({ setText, text, send, profile }: allMessageType) => {
       </div>
       <div className="send-box-button">
         <button type="submit" onClick={send} disabled={!permission}>
-          <IoMdSend size="2.1rem" color="#3390EC" />
+          <IoMdSend size="2.2rem" color="#3390EC" />
         </button>
       </div>
     </form>
