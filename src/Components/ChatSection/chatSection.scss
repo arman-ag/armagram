@@ -10,6 +10,7 @@
   border-radius: 12px;
   align-items: center;
   input {
+    caret-color: $blue-1;
     width: 60%;
     border: none;
     &:focus {
@@ -85,18 +86,21 @@
     border-radius: 12px;
   }
   &-button {
-    padding-left: 0.15rem;
+    padding-left: 0.3rem;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(153, 148, 148, 0.19);
     display: flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: center;
+    justify-items: baseline;
+    align-content: center;
+    align-items: center;
     margin-left: 0.6rem;
     background-color: $white-1;
     border-radius: 50px;
-    width: 3.1rem;
+    width: 2.85rem;
     height: 3.1rem;
     button {
       @extend%btn;
+      padding: 0;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0);
