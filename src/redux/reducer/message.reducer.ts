@@ -23,7 +23,8 @@ const message = (state = storedData, action) => {
     case 'send_message_fail':
       return {
         openModal: action?.openModal,
-        message: action?.err
+        message: action?.err,
+        errStatus: action?.errStatus
       };
     case 'delete_message':
       return;

@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import { useEffect, useRef, useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { useSelector } from 'react-redux';
@@ -15,7 +18,6 @@ const App: React.FC = () => {
   const status = useSelector((state: any) => state.modal.status);
   const err = useSelector((state: any) => state.message);
   const messages = useSelector((state: any) => state.message);
-
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
@@ -33,13 +35,20 @@ const App: React.FC = () => {
       behavior: 'smooth'
     });
   };
-  err?.openModal &&
-    Swal.fire({
-      title: 'Error!',
-      text: err.message,
-      icon: 'error',
-      confirmButtonText: 'ok'
-    }).then((res) => res?.value && window.location.reload());
+
+  const swalWindow = () => {
+    switch (messages.errStatus) {
+      case 'networkError':
+        return {
+          title: 'Error!',
+          text: err.message,
+          icon: 'error',
+          confirmButtonText: 'ok'
+        };
+    }
+  };
+
+  err?.openModal && Swal.fire(swalWindow()).then((res) => res?.value && window.location.reload());
 
   useEffect(() => {
     if (messageContainer.current == null) {

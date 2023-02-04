@@ -9,7 +9,11 @@ const userMessage = (userMessage, phone, id) => {
       } = await sendService.getMessage(userMessage, id);
       dispatch(sendMessage(message, phone, true));
     } catch (err) {
-      dispatch(sendMessageFail(err.message + ' please use vpn'));
+      if (err?.response?.status === 400) {
+        dispatch(sendMessage('Hey you must be polite with me 😑', phone, true));
+      } else {
+        dispatch(sendMessageFail(err.message + ' ⛔ use vpn', 'networkError'));
+      }
     }
   };
 };
@@ -22,8 +26,8 @@ const sendMessage = (message, phone, Permission) => {
     Permission
   };
 };
-const sendMessageFail = (err) => {
-  return { type: 'send_message_fail', openModal: true, err };
+const sendMessageFail = (err, errStatus) => {
+  return { type: 'send_message_fail', openModal: true, err, errStatus };
 };
 export const messageAction = {
   userMessage
