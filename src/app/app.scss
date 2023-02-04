@@ -27,15 +27,16 @@
   display: flex;
   justify-content: end;
   align-items: center;
+
   background-color: $white-1;
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  width: 3.1rem;
-  height: 3.1rem;
+  min-width: 3.1rem;
+  height: 3rem;
   position: fixed;
-  bottom: 15%;
-  right: 18%;
+  bottom: 18%;
+  right: 17.5%;
   button {
     @extend%btn;
     &:hover {
@@ -46,7 +47,7 @@
 
 @media (max-width: 500px) {
   .scroll-button {
-    right: 6%;
+    right: 3.5%;
   }
 
   .chat-section {

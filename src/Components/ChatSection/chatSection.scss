@@ -83,7 +83,7 @@
     justify-content: center;
     flex-direction: column;
     background-color: $white-1;
-    border-radius: 12px;
+    border-radius: 1rem;
   }
   &-button {
     padding-left: 0.3rem;
@@ -96,8 +96,8 @@
     margin-left: 0.6rem;
     background-color: $white-1;
     border-radius: 50px;
-    width: 2.85rem;
-    height: 3.1rem;
+    min-width: 2.85rem;
+    height: 3.25rem;
     button {
       @extend%btn;
       padding: 0;
